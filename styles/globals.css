@@ -2,15 +2,40 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #fafafa;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer base {
+  a {
+    color: rgb(85, 26, 139);
+  }
+
+  a:active {
+    color: rgb(255, 0, 0);
+  }
 }
 
-* {
-  box-sizing: border-box;
+.verse {
+  cursor: pointer;
+  color: #6166dc;
+}
+
+.verse-overlay {
+  width: 90%;
+  z-index: 10;
+  padding: 20px;
+  max-width: 500px;
+  position: absolute;
+  background: #000;
+  border-radius: 5px;
+  align-items: center;
+  color: rgb(197, 197, 204);
+  animation: animation-1xhp7f5 200ms forwards;
+  transition: left 75ms ease-out, right 75ms ease-out, background 200ms;
+}
+
+.verse-overlay span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #73737d;
 }

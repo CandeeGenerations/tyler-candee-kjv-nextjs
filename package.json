@@ -3,13 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 1338",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "@apollo/react-ssr": "^4.0.0",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@mdx-js/react": "^1.6.22",
+    "apollo-boost": "^0.4.9",
+    "apollo-server-micro": "^2.19.1",
+    "autoprefixer": "^10.2.1",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.3",
+    "graphql": "^15.4.0",
+    "graphql-request": "^3.4.0",
+    "isomorphic-unfetch": "^3.1.0",
     "next": "10.0.5",
+    "nookies": "^2.5.2",
+    "postcss": "^8.2.4",
+    "prettier": "^2.2.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-medium-image-zoom": "^3.1.1",
+    "react-remark": "^2.0.3",
+    "rehype-raw": "^5.0.0",
+    "rehype-react": "^6.2.0",
+    "remark-parse": "^9.0.0",
+    "remark-react": "^8.0.0",
+    "remark-rehype": "^8.0.0",
+    "tailwindcss": "^2.0.2",
+    "unified": "^9.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.20",
+    "@types/react": "^17.0.0",
+    "@types/react-helmet": "^6.1.0",
+    "typescript": "^4.1.3"
   }
 }
