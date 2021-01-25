@@ -1,4 +1,5 @@
 import {Helmet} from 'react-helmet'
+import {DetailedHTMLProps} from 'react'
 
 const SEO = ({
   title,
@@ -18,7 +19,7 @@ const SEO = ({
   // If no image is provided lets looks for a default novela static image
   image = image ? image : '/preview.jpg'
 
-  const metaTags = [
+  const metaTags: DetailedHTMLProps<any, any>[] = [
     {charset: 'utf-8'},
     {
       'http-equiv': 'X-UA-Compatible',
