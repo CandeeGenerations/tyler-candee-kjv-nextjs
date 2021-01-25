@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import styled from '@emotion/styled'
 import {getImageUrl} from '../../../helpers'
 import {PostsContext} from '../../../pages'
 import TilesIcon from '../../icons/tiles'
 import RowsIcon from '../../icons/rows'
 import {GridLayoutContext} from './gridLayout'
+import Image from '../../image'
 
 const FeaturedAuthor = () => {
   const {author} = React.useContext(PostsContext)
@@ -26,9 +26,6 @@ const FeaturedAuthor = () => {
                     className="absolute top-0 left-0 w-full h-full"
                     src={getImageUrl(author.avatar.url)}
                     alt={author.name}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center center"
                   />
                 </div>
               </AuthorImageWrapper>
