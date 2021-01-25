@@ -4,12 +4,20 @@ import {POSTS_COUNT_BY_TAG, TAG_POSTS} from '../../gql/posts'
 import {getGQLClient} from '../../gql/request'
 import TagPage from '../../components/pages/tags/tagPage'
 import {getPaths} from '../../helpers'
+import {Helmet} from 'react-helmet'
+import {siteTitle} from '../../helpers/contants'
 
 export const TagContext = React.createContext<any>({})
 
 const Tag = (props) => {
   return (
     <TagContext.Provider value={props}>
+      <Helmet
+        title={`${props.page > 1 ? `Page ${props.page} - ` : ''}${
+          props.tag.tag
+        } | ${siteTitle}`}
+      />
+
       <TagPage />
     </TagContext.Provider>
   )

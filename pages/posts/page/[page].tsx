@@ -5,10 +5,14 @@ import {FEATURED_AUTHOR} from '../../../gql/authors'
 import React from 'react'
 import {PostsContext} from '../../index'
 import GridLayout from '../../../components/pages/home/gridLayout'
+import {Helmet} from 'react-helmet'
+import {siteTitle} from '../../../helpers/contants'
 
 const Page = (props) => {
   return (
     <PostsContext.Provider value={props}>
+      <Helmet title={`Page ${props.page} - All Posts | ${siteTitle}`} />
+
       <GridLayout>
         <PostsPage />
       </GridLayout>

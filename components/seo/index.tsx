@@ -1,5 +1,6 @@
 import {Helmet} from 'react-helmet'
 import {DetailedHTMLProps} from 'react'
+import {siteTitle} from '../../helpers/contants'
 
 const SEO = ({
   title,
@@ -70,7 +71,7 @@ const SEO = ({
 
   return (
     <Helmet
-      title={title || 'Tyler Candee'}
+      title={`${title} | ${siteTitle}` || siteTitle}
       htmlAttributes={{lang: 'en'}}
       meta={metaTags}
     >
