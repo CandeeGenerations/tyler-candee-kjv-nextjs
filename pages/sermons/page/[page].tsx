@@ -3,10 +3,14 @@ import {SermonsContext} from '../index'
 import SermonsPage from '../../../components/pages/sermons/sermonsPage'
 import {ALL_SERMONS, SERMONS_COUNT} from '../../../gql/sermons'
 import {getGQLClient} from '../../../gql/request'
+import {Helmet} from 'react-helmet'
+import {siteTitle} from '../../../helpers/contants'
 
 const Page = (props) => {
   return (
     <SermonsContext.Provider value={props}>
+      <Helmet title={`Page ${props.page} - Sermons | ${siteTitle}`} />
+
       <SermonsPage />
     </SermonsContext.Provider>
   )

@@ -5,13 +5,16 @@ import {FEATURED_AUTHOR} from '../gql/authors'
 import GridLayout from '../components/pages/home/gridLayout'
 import {FEATURED_TAGS} from '../gql/tags'
 import FeaturedTags from '../components/pages/home/featuredTags'
-import {forEach} from 'iterall'
+import {Helmet} from 'react-helmet'
+import {siteTitle} from '../helpers/contants'
 
 export const PostsContext = React.createContext<any>({})
 
 const Home = (props) => {
   return (
     <PostsContext.Provider value={props}>
+      <Helmet title={siteTitle} />
+
       <GridLayout>
         <FeaturedTags />
       </GridLayout>

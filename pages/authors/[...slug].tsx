@@ -4,12 +4,20 @@ import React from 'react'
 import {AUTHOR_POSTS, POSTS_COUNT_BY_AUTHOR} from '../../gql/posts'
 import AuthorPage from '../../components/pages/authors/authorPage'
 import {getPaths} from '../../helpers'
+import {Helmet} from 'react-helmet'
+import {siteTitle} from '../../helpers/contants'
 
 export const AuthorContext = React.createContext<any>({})
 
 const Author = (props) => {
   return (
     <AuthorContext.Provider value={props}>
+      <Helmet
+        title={`${props.page > 1 ? `Page ${props.page} - ` : ''}${
+          props.author.name
+        } | ${siteTitle}`}
+      />
+
       <AuthorPage />
     </AuthorContext.Provider>
   )

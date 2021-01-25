@@ -2,12 +2,16 @@ import React from 'react'
 import {getGQLClient} from '../../gql/request'
 import {ALL_SERMONS, SERMONS_COUNT} from '../../gql/sermons'
 import SermonsPage from '../../components/pages/sermons/sermonsPage'
+import {Helmet} from 'react-helmet'
+import {siteTitle} from '../../helpers/contants'
 
 export const SermonsContext = React.createContext<any>({})
 
 const Preaching = (props) => {
   return (
     <SermonsContext.Provider value={props}>
+      <Helmet title={`Sermons | ${siteTitle}`} />
+
       <SermonsPage />
     </SermonsContext.Provider>
   )

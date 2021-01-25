@@ -3,10 +3,14 @@ import Layout from '../../components/layout'
 import Headings from '../../components/postComponents/headings'
 import Blockquote from '../../components/postComponents/blockquote'
 import ButtonLink from '../../components/buttonLink'
+import {Helmet} from 'react-helmet'
+import {siteTitle} from '../../helpers/contants'
 
 const Salvation = () => {
   return (
     <Layout>
+      <Helmet title={`Salvation | ${siteTitle}`} />
+
       <SalvationContainer className="lg:px-0 px-4">
         <Headings.h1>Salvation</Headings.h1>
 
