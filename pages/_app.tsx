@@ -1,9 +1,25 @@
 import {Helmet} from 'react-helmet'
 import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
+import {useRouter} from 'next/router'
 import React from 'react'
+import * as gtag from '../libs/gtag'
 
 function MyApp({Component, pageProps}) {
+  const router = useRouter()
+
+  React.useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url)
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <>
       <Helmet>
