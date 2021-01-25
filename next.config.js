@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'kjv-strapi.cgen.cc'],
   },
   env: {
     siteUrl: process.env.NEXT_PUBLIC_SITE_URL,

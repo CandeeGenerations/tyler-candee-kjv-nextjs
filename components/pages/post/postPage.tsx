@@ -1,7 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-// import throttle from 'lodash/throttle'
 import styled from '@emotion/styled'
 import {PostContext} from '../../../pages/[slug]'
 import Layout from '../../layout'
@@ -10,52 +8,12 @@ import {getDate, getImageUrl} from '../../../helpers'
 import readingTime from '../../../helpers/readingTime'
 import NextPosts from './nextPosts'
 import MDXRenderer from './mdx'
-// import Aside from './aside'
-// import Progress from './progress'
 import PostSEO from './seo'
 import Comments from './comments'
 import Tag from './tag'
 
 const PostPage = () => {
   const {post, nextPosts} = React.useContext(PostContext)
-  const contentSectionRef = React.useRef<HTMLElement>(null)
-
-  // const [hasCalculated, setHasCalculated] = React.useState<boolean>(false)
-  // const [contentHeight, setContentHeight] = React.useState<number>(0)
-
-  // React.useEffect(() => {
-  //   const calculateBodySize = throttle(() => {
-  //     const contentSection = contentSectionRef.current
-  //
-  //     if (!contentSection) return
-  //
-  //     /**
-  //      * If we haven't checked the content's height before,
-  //      * we want to add listeners to the content area's
-  //      * imagery to recheck when it's loaded
-  //      */
-  //     if (!hasCalculated) {
-  //       const debouncedCalculation = debounce(calculateBodySize)
-  //       const $imgs = contentSection.querySelectorAll('img')
-  //
-  //       $imgs.forEach(($img) => {
-  //         // If the image hasn't finished loading then add a listener
-  //         if (!$img.complete) $img.onload = debouncedCalculation
-  //       })
-  //
-  //       // Prevent rerun of the listener attachment
-  //       setHasCalculated(true)
-  //     }
-  //
-  //     // Set the height and offset of the content area
-  //     setContentHeight(contentSection.getBoundingClientRect().height)
-  //   }, 20)
-  //
-  //   calculateBodySize()
-  //   window.addEventListener('resize', calculateBodySize)
-  //
-  //   return () => window.removeEventListener('resize', calculateBodySize)
-  // }, [])
 
   return (
     <Layout>
@@ -69,7 +27,7 @@ const PostPage = () => {
             <AuthorLink className="flex items-center">
               <AuthorImageWrapper className="rounded-full mr-3 overflow-hidden hidden lg:block">
                 <div className="relative overflow-hidden">
-                  <Image
+                  <img
                     src={getImageUrl(post.author.avatar.url)}
                     alt={post.author.name}
                     height={25}
@@ -94,21 +52,14 @@ const PostPage = () => {
         id="ArticleImage__Hero"
         className="relative max-w-4xl overflow-hidden my-0 mx-auto shadow-2xl rounded-xl"
       >
-        <Image
+        <img
           src={getImageUrl(post.hero.url)}
           width={post.hero.width}
           height={post.hero.height}
         />
       </HeroWrapper>
 
-      {/*<Aside contentHeight={contentHeight}>*/}
-      {/*  <Progress contentHeight={contentHeight} />*/}
-      {/*</Aside>*/}
-
-      <PostBody
-        ref={contentSectionRef}
-        className="relative pt-40 pb-9 pr-0 lg:pl-16"
-      >
+      <PostBody className="relative pt-40 pb-9 pr-0 lg:pl-16">
         <MDXRenderer content={post.body} />
       </PostBody>
 

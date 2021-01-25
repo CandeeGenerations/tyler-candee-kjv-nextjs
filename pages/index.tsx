@@ -26,8 +26,6 @@ export const getStaticProps = async () => {
   const featuredTagsData = await client.request(FEATURED_TAGS)
 
   for (const tag of featuredTagsData.tags) {
-    console.log('tag :', tag)
-
     const posts = await client.request(TAG_POSTS, {limit: 4, tagId: tag.id})
 
     tag.posts = posts.posts

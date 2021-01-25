@@ -1,7 +1,6 @@
 import Layout from '../../layout'
 import React from 'react'
-import Image from 'next/image'
-import {getDate, getImageUrl} from '../../../helpers'
+import {getDate} from '../../../helpers'
 import {SermonContext} from '../../../pages/sermons/[code]'
 import styled from '@emotion/styled'
 import H1 from '../../typography/heading1'
@@ -18,23 +17,12 @@ const SermonPage = () => {
         </SubHeader>
       </header>
 
-      {/*<HeroWrapper*/}
-      {/*  id="ArticleImage__Hero"*/}
-      {/*  className="relative max-w-4xl overflow-hidden my-0 mx-auto shadow-2xl rounded-xl"*/}
-      {/*>*/}
-      {/*  <Image*/}
-      {/*    src={getImageUrl(sermon.hero.url)}*/}
-      {/*    width={sermon.hero.width}*/}
-      {/*    height={sermon.hero.height}*/}
-      {/*  />*/}
-      {/*</HeroWrapper>*/}
-
       <SermonFrame
         src={`https://www.youtube.com/embed/${sermon.code}`}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-      ></SermonFrame>
+      />
     </Layout>
   )
 }
@@ -46,14 +34,6 @@ const Header = styled(H1)`
 
 const SubHeader = styled.div`
   color: #73737d;
-`
-
-const HeroWrapper = styled.div`
-  z-index: 1;
-
-  > div {
-    display: block !important;
-  }
 `
 
 const SermonFrame = styled.iframe`

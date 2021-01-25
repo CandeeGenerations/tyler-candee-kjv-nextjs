@@ -1,10 +1,10 @@
 import React from 'react'
-import Image from 'next/image'
 import styled from '@emotion/styled'
 import {AuthorContext} from '../../../pages/authors/[...slug]'
 import {getImageUrl} from '../../../helpers'
 import H1 from '../../typography/heading1'
 import SocialIcons from '../../socialIcons'
+import Image from '../../image'
 
 const AuthorSection = () => {
   const {author} = React.useContext(AuthorContext)
@@ -16,13 +16,7 @@ const AuthorSection = () => {
           <AvatarBlock className="w-full" />
 
           <div className="w-full h-full absolute top-0 left-0 delay-500">
-            <Image
-              src={getImageUrl(author.avatar.url)}
-              alt={author.name}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center center"
-            />
+            <Image src={getImageUrl(author.avatar.url)} alt={author.name} />
           </div>
         </div>
       </AvatarWrapper>
