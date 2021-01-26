@@ -23,7 +23,7 @@ export const POSTS_COUNT_BY_AUTHOR = gql`
 
 export const POSTS_COUNT_BY_TAG = gql`
   query postsCount($tagId: ID!) {
-    postsCount(where: {secret: false, tag: $tagId})
+    postsCount(where: {secret: false, tags_in: [$tagId]})
   }
 `
 
@@ -41,7 +41,7 @@ export const postFragment = gql`
     }
     excerpt
     body
-    tag {
+    tags {
       id
       slug
       tag
@@ -107,7 +107,7 @@ export const TAG_POSTS = gql`
       start: $start
       sort: "date:desc"
       publicationState: LIVE
-      where: {secret: false, tag: $tagId}
+      where: {secret: false, tags_in: [$tagId]}
     ) {
       ...PostFragement
     }
