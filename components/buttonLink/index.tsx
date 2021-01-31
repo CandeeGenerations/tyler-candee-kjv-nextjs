@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-const ButtonLink = ({href, children, anchor = false}) => {
+const ButtonLink = ({href, children, noBackground = false, anchor = false}) => {
   let linkProps = {
     className: 'rounded-md py-4 px-12',
   }
@@ -15,7 +15,11 @@ const ButtonLink = ({href, children, anchor = false}) => {
     linkProps = {...linkProps, ...anchorProps}
   }
 
-  const link = <Button {...linkProps}>{children}</Button>
+  const link = noBackground ? (
+    <a {...linkProps}>{children}</a>
+  ) : (
+    <Button {...linkProps}>{children}</Button>
+  )
 
   return anchor ? (
     link

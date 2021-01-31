@@ -4,8 +4,7 @@ import {getGQLClient} from '../../gql/request'
 import SermonPage from '../../components/pages/sermons/sermonPage'
 import {Helmet} from 'react-helmet'
 import {siteTitle} from '../../helpers/contants'
-
-export const SermonContext = React.createContext<any>({})
+import {SermonContext} from '../sermons/[code]'
 
 const Sermon = (props) => {
   return (
@@ -20,7 +19,7 @@ const Sermon = (props) => {
 export async function getStaticPaths() {
   const client = getGQLClient()
   const sermonCodes = await client.request(SERMON_CODES, {
-    where: {type: 'Sermon'},
+    where: {type: 'Devotional'},
   })
   let paths = []
 

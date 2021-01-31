@@ -4,8 +4,10 @@ import H1 from '../../typography/heading1'
 import Pagination from '../../pagination'
 import React from 'react'
 import Post from '../home/post'
+import styled from '@emotion/styled'
+import ButtonLink from '../../buttonLink'
 
-const SermonsPage = () => {
+const SermonsPage = ({devotionals = false}) => {
   const {sermons} = React.useContext(SermonsContext)
 
   return (
@@ -14,9 +16,23 @@ const SermonsPage = () => {
         <H1>Watch some sermons from Tyler Candee today!</H1>
       </div>
 
+      <div className="flex flex-row gap-4 justify-center mb-12">
+        <ButtonLink href="/sermons" noBackground={devotionals}>
+          Sermons
+        </ButtonLink>
+
+        <ButtonLink href="/devotionals" noBackground={!devotionals}>
+          Devotionals
+        </ButtonLink>
+      </div>
+
       <div className="grid grid-cols-2 gap-6 lg:px-0 px-4">
         {sermons.map((sermon, index) => (
-          <Post key={index} data={sermon} route="sermons" />
+          <Post
+            key={index}
+            data={sermon}
+            route={devotionals ? 'devotionals' : 'sermons'}
+          />
         ))}
       </div>
 
@@ -24,5 +40,11 @@ const SermonsPage = () => {
     </Layout>
   )
 }
+
+const SermonLink = styled.a`
+  &.active {
+    background-color: #000;
+  }
+`
 
 export default SermonsPage

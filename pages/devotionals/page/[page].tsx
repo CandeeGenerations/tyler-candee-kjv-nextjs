@@ -1,17 +1,17 @@
 import React from 'react'
-import {SermonsContext} from '../index'
 import SermonsPage from '../../../components/pages/sermons/sermonsPage'
 import {ALL_SERMONS, SERMONS_COUNT} from '../../../gql/sermons'
 import {getGQLClient} from '../../../gql/request'
 import {Helmet} from 'react-helmet'
 import {siteTitle} from '../../../helpers/contants'
+import {SermonsContext} from '../../sermons'
 
 const Page = (props) => {
   return (
     <SermonsContext.Provider value={props}>
-      <Helmet title={`Page ${props.page} - Sermons | ${siteTitle}`} />
+      <Helmet title={`Page ${props.page} - Devotionals | ${siteTitle}`} />
 
-      <SermonsPage />
+      <SermonsPage devotionals />
     </SermonsContext.Provider>
   )
 }
@@ -19,7 +19,7 @@ const Page = (props) => {
 export async function getStaticPaths() {
   const client = getGQLClient()
   const sermonsCountData = await client.request(SERMONS_COUNT, {
-    where: {type: 'Sermon'},
+    where: {type: 'Devotional'},
   })
   const pages = Math.ceil(sermonsCountData.sermonsCount / 6)
   const paths = []
@@ -38,11 +38,11 @@ export const getStaticProps = async ({params}) => {
   const client = getGQLClient()
   const pageNumber = Number(params.page)
   const sermonsData = await client.request(ALL_SERMONS, {
-    where: {type: 'Sermon'},
+    where: {type: 'Devotional'},
     start: (pageNumber - 1) * 6,
   })
   const sermonsCountData = await client.request(SERMONS_COUNT, {
-    where: {type: 'Sermon'},
+    where: {type: 'Devotional'},
   })
 
   return {

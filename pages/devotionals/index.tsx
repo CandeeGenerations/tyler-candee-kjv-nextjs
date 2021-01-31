@@ -4,15 +4,14 @@ import {ALL_SERMONS, SERMONS_COUNT} from '../../gql/sermons'
 import SermonsPage from '../../components/pages/sermons/sermonsPage'
 import {Helmet} from 'react-helmet'
 import {siteTitle} from '../../helpers/contants'
+import {SermonsContext} from '../sermons'
 
-export const SermonsContext = React.createContext<any>({})
-
-const Preaching = (props) => {
+const Devotionals = (props) => {
   return (
     <SermonsContext.Provider value={props}>
-      <Helmet title={`Sermons | ${siteTitle}`} />
+      <Helmet title={`Devotionals | ${siteTitle}`} />
 
-      <SermonsPage />
+      <SermonsPage devotionals />
     </SermonsContext.Provider>
   )
 }
@@ -20,9 +19,11 @@ const Preaching = (props) => {
 export const getStaticProps = async () => {
   const client = getGQLClient()
   const sermonsData = await client.request(ALL_SERMONS, {
-    where: {type: 'Sermon'},
+    where: {type: 'Devotional'},
   })
-  const sermonsCountData = await client.request(SERMONS_COUNT)
+  const sermonsCountData = await client.request(SERMONS_COUNT, {
+    where: {type: 'Devotional'},
+  })
 
   return {
     props: {
@@ -33,4 +34,4 @@ export const getStaticProps = async () => {
   }
 }
 
-export default Preaching
+export default Devotionals
