@@ -4,16 +4,16 @@ import H1 from '../../typography/heading1'
 import Pagination from '../../pagination'
 import React from 'react'
 import Post from '../home/post'
-import styled from '@emotion/styled'
 import ButtonLink from '../../buttonLink'
 
 const SermonsPage = ({devotionals = false}) => {
   const {sermons} = React.useContext(SermonsContext)
+  const keyword = devotionals ? 'devotionals' : 'sermons'
 
   return (
     <Layout>
       <div className="max-w-2xl my-32 lg:px-0 px-4">
-        <H1>Watch some sermons from Tyler Candee today!</H1>
+        <H1>Watch some {keyword} from Tyler Candee today!</H1>
       </div>
 
       <div className="flex flex-row gap-4 justify-center mb-12">
@@ -28,23 +28,13 @@ const SermonsPage = ({devotionals = false}) => {
 
       <div className="grid grid-cols-2 gap-6 lg:px-0 px-4">
         {sermons.map((sermon, index) => (
-          <Post
-            key={index}
-            data={sermon}
-            route={devotionals ? 'devotionals' : 'sermons'}
-          />
+          <Post key={index} data={sermon} route={keyword} />
         ))}
       </div>
 
-      <Pagination route="sermons" context={SermonsContext} />
+      <Pagination route={keyword} context={SermonsContext} />
     </Layout>
   )
 }
-
-const SermonLink = styled.a`
-  &.active {
-    background-color: #000;
-  }
-`
 
 export default SermonsPage

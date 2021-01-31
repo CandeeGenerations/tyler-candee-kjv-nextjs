@@ -22,7 +22,9 @@ export const getStaticProps = async () => {
   const sermonsData = await client.request(ALL_SERMONS, {
     where: {type: 'Sermon'},
   })
-  const sermonsCountData = await client.request(SERMONS_COUNT)
+  const sermonsCountData = await client.request(SERMONS_COUNT, {
+    where: {type: 'Sermon'},
+  })
 
   return {
     props: {

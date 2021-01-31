@@ -9,6 +9,7 @@ const FourOhFour = () => {
   return (
     <Layout>
       <Helmet title={`404 | ${siteTitle}`} />
+
       <div className="mt-24">
         <Headings.h1>Jeremiah 29:13 says...</Headings.h1>
 
