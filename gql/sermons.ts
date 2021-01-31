@@ -1,8 +1,8 @@
 import {gql} from 'graphql-request'
 
 export const SERMONS_COUNT = gql`
-  query {
-    sermonsCount
+  query SermonsCount($where: JSON = {}) {
+    sermonsCount(where: $where)
   }
 `
 
