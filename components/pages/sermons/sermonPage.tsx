@@ -7,6 +7,7 @@ import H1 from '../../typography/heading1'
 
 const SermonPage = () => {
   const {sermon} = React.useContext(SermonContext)
+
   return (
     <Layout>
       <header className="relative z-10 mt-24 mb-28 mx-auto lg:pl-16 px-4 md:px-0 max-w-2xl">

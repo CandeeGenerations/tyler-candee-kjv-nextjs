@@ -7,8 +7,8 @@ export const SERMONS_COUNT = gql`
 `
 
 export const SERMON_CODES = gql`
-  query {
-    sermons {
+  query SermonCodes($where: JSON = {}) {
+    sermons(where: $where) {
       id
       code
     }
@@ -30,8 +30,8 @@ const sermonFragment = gql`
 `
 
 export const ALL_SERMONS = gql`
-  query allSermons($start: Int = 0) {
-    sermons(limit: 6, start: $start, sort: "date:desc") {
+  query allSermons($start: Int = 0, $where: JSON = {}) {
+    sermons(limit: 6, start: $start, sort: "date:desc", where: $where) {
       ...SermonFragement
     }
   }
