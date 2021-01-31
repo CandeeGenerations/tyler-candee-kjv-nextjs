@@ -5,6 +5,7 @@ import {TagContext} from '../../../pages/tags/[...slug]'
 import styled from '@emotion/styled'
 import Post from '../home/post'
 import H1 from '../../typography/heading1'
+import Subscribe from '../home/subscribe'
 
 const TagPage = () => {
   const {tag, posts} = React.useContext(TagContext)
@@ -28,6 +29,8 @@ const TagPage = () => {
       </PostsWrapper>
 
       <Pagination center context={TagContext} route={`tags/${tag.slug}`} />
+
+      <Subscribe className="mt-16 mx-auto" />
     </Layout>
   )
 }

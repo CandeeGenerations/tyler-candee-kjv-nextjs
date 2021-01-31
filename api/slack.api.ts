@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const sendNewCommentSlackMessage = ({id, post, text}) => {
+export const sendNewCommentSlackMessage = ({id, post, name, text}) => {
   const slackUrl = process.env.NEXT_PUBLIC_SLACK_WEBHOOK_URL
 
   if (!slackUrl) {
@@ -21,7 +21,7 @@ export const sendNewCommentSlackMessage = ({id, post, text}) => {
             {
               title: 'Comment',
               short: false,
-              value: text,
+              value: `${text} - ${name}`,
             },
           ],
           actions: [

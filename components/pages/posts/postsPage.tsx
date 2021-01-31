@@ -6,6 +6,8 @@ import {PostsContext} from '../../../pages'
 import Pagination from '../../pagination'
 import styled from '@emotion/styled'
 import FeaturedAuthor from '../home/featuredAuthor'
+import Tag from '../post/tag'
+import Subscribe from '../home/subscribe'
 
 const PostsPage = () => {
   return (
@@ -19,6 +21,8 @@ const PostsPage = () => {
       <HomePosts />
 
       <Pagination route="posts" context={PostsContext} />
+
+      <Subscribe className="mt-16" />
     </Layout>
   )
 }

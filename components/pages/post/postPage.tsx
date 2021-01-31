@@ -11,6 +11,7 @@ import MDXRenderer from './mdx'
 import PostSEO from './seo'
 import Comments from './comments'
 import Tag from './tag'
+import Subscribe from '../home/subscribe'
 
 const PostPage = () => {
   const {post, nextPosts} = React.useContext(PostContext)
@@ -64,6 +65,8 @@ const PostPage = () => {
       </PostBody>
 
       <Tag />
+
+      <Subscribe className="mt-16 mx-auto" />
 
       <Comments />
 

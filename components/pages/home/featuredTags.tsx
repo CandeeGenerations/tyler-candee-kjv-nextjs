@@ -7,6 +7,7 @@ import {PostsContext} from '../../../pages'
 import styled from '@emotion/styled'
 import Headings from '../../postComponents/headings'
 import ButtonLink from '../../buttonLink'
+import Subscribe from './subscribe'
 
 const FeaturedTags = () => {
   const {featuredTags, posts} = React.useContext(PostsContext)
@@ -18,6 +19,8 @@ const FeaturedTags = () => {
       </div>
 
       <FeaturedAuthor />
+
+      <Subscribe />
 
       {featuredTags.map((tag, index) => (
         <TagPostsWrapper key={index}>
