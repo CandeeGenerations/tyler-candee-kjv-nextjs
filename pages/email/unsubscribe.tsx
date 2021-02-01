@@ -9,7 +9,7 @@ const UnsubscribeConfirm = () => {
     <Layout>
       <Helmet title={`Unsubscribed | ${siteTitle}`} />
 
-      <div className="mt-24">
+      <div className="mt-24 mx-10 md:mx-0">
         <Headings.h1>You are now unsubscribed</Headings.h1>
 
         <p className="py-10">

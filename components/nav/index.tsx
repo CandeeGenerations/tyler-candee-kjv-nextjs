@@ -66,6 +66,7 @@ const NavContainer = styled.div`
   padding-top: 100px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @media (max-width: 1280px) {
     padding-top: 50px;
