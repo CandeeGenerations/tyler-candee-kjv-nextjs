@@ -27,7 +27,7 @@ const Comments = () => {
     const {comment} = response.createComment
 
     sendNewCommentSlackMessage(comment)
-    sendEmail(comment)
+    sendEmail('/v2/new-comment', comment)
     setSuccess(true)
   }
 

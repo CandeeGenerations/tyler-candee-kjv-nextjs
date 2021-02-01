@@ -32,6 +32,7 @@ const Subscribe = ({className = ''}) => {
           type="email"
           placeholder="Your email address"
           name="email"
+          required
           onChange={({target}) => setEmail(target.value)}
         />
 

@@ -21,6 +21,10 @@ const NavigationMain = ({footer = false}) => {
       <NavigationItem>
         <Link href="/sermons">Sermons &amp; Devotionals</Link>
       </NavigationItem>
+
+      <NavigationItem>
+        <Link href="/contact">Contact Me</Link>
+      </NavigationItem>
     </NavigationList>
   )
 
