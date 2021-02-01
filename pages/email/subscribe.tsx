@@ -9,7 +9,7 @@ const SubscribeConfirm = () => {
     <Layout>
       <Helmet title={`Subscription Confirmed | ${siteTitle}`} />
 
-      <div className="mt-24">
+      <div className="mt-24 mx-10 md:mx-0">
         <Headings.h1>Subscription Confirmed!</Headings.h1>
 
         <p className="py-10">

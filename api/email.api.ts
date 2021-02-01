@@ -1,13 +1,13 @@
 import axios from 'axios'
 
-export const sendEmail = (data) => {
+export const sendEmail = (url, data) => {
   const emailUrl = process.env.NEXT_PUBLIC_EMAIL_SERVER
 
   if (!emailUrl) {
     return
   }
 
-  axios.post(`${emailUrl}/v2/new-comment`, {
+  axios.post(`${emailUrl}${url}`, {
     to: process.env.NEXT_PUBLIC_TO_EMAIL,
     data: {
       ...data,
