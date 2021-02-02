@@ -1,10 +1,13 @@
 import {gql} from 'graphql-request'
 
 export const TAGS_SLUGS = gql`
-  query {
-    tagSlugs {
+  query($sort: String) {
+    tagSlugs(sort: $sort) {
       id
+      tag
       slug
+      featured
+      order
       postCount
     }
   }

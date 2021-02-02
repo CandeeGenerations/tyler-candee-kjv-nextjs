@@ -15,6 +15,10 @@ const NavigationMain = ({footer = false}) => {
       )}
 
       <NavigationItem>
+        <Link href="/tags">Tags</Link>
+      </NavigationItem>
+
+      <NavigationItem>
         <Link href="/salvation">Salvation</Link>
       </NavigationItem>
 
