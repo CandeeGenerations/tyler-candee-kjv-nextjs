@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import {getImageUrl} from '../../../helpers'
 import {PostsContext} from '../../../pages'
 import TilesIcon from '../../icons/tiles'
 import RowsIcon from '../../icons/rows'
@@ -24,7 +23,7 @@ const FeaturedAuthor = () => {
 
                   <Image
                     className="absolute top-0 left-0 w-full h-full"
-                    src={getImageUrl(author.avatar.url)}
+                    src={author.avatar.url}
                     alt={author.name}
                   />
                 </div>

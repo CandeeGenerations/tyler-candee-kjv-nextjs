@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 import readingTime from '../../../helpers/readingTime'
-import {getDate, getImageUrl} from '../../../helpers'
+import {getDate} from '../../../helpers'
 import Image from '../../image'
 
 const Post = ({
@@ -40,7 +40,7 @@ const Post = ({
           >
             <PostImageWrapper className="shadow-none hover:shadow-none md:shadow-2xl md:hover:shadow-lg md:mb-7 mb-0 rounded-lg">
               <PostImageContainer className="md:rounded-lg rounded-t-lg">
-                <Image src={getImageUrl(data.hero.url)} alt={data.slug} />
+                <Image src={data.hero.url} alt={data.slug} />
               </PostImageContainer>
             </PostImageWrapper>
 
