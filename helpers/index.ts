@@ -44,8 +44,6 @@ export const getDate = (date) => {
   return dayjsDate.format('MMMM Do, YYYY')
 }
 
-export const getImageUrl = (imageUri) => `${process.env.serverUrl}${imageUri}`
-
 export const range = (start: number, len: number, step: number = 1) =>
   len
     ? new Array(len)

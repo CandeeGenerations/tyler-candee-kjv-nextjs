@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import {PostContext} from '../../../pages/[slug]'
 import Layout from '../../layout'
 import H1 from '../../typography/heading1'
-import {getDate, getImageUrl} from '../../../helpers'
+import {getDate} from '../../../helpers'
 import readingTime from '../../../helpers/readingTime'
 import NextPosts from './nextPosts'
 import MDXRenderer from './mdx'
@@ -29,7 +29,7 @@ const PostPage = () => {
               <AuthorImageWrapper className="rounded-full mr-3 overflow-hidden hidden lg:block">
                 <div className="relative overflow-hidden">
                   <img
-                    src={getImageUrl(post.author.avatar.url)}
+                    src={post.author.avatar.url}
                     alt={post.author.name}
                     height={25}
                     width={25}
@@ -54,7 +54,7 @@ const PostPage = () => {
         className="relative max-w-4xl overflow-hidden my-0 mx-auto shadow-2xl rounded-xl"
       >
         <img
-          src={getImageUrl(post.hero.url)}
+          src={post.hero.url}
           width={post.hero.width}
           height={post.hero.height}
         />

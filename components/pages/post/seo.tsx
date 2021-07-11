@@ -1,5 +1,5 @@
 import React from 'react'
-import {getDate, getImageUrl} from '../../../helpers'
+import {getDate} from '../../../helpers'
 import readingTime from '../../../helpers/readingTime'
 import SEO from '../../seo'
 
@@ -22,7 +22,7 @@ const PostSEO = ({post, location}) => {
       "@id": "${siteUrl}${location.pathname}"
     },
     "headline": "${post.title}",
-    "image": "${getImageUrl(post.hero.url)}",
+    "image": "${post.hero.url}",
     "datePublished": "${post.date}",
     "dateModified": "${post.date}",
     "author": ${JSON.stringify(authorData)},
