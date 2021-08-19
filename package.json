@@ -46,5 +46,12 @@
     "@types/react-helmet": "^6.1.2",
     "@types/react-medium-image-zoom": "^3.0.1",
     "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "path-parse": "^1.0.7",
+    "color-string": "^1.6.0",
+    "glob-parent": "^6.0.1",
+    "lodash": "^4.17.21",
+    "elliptic": "^6.5.4"
   }
 }
