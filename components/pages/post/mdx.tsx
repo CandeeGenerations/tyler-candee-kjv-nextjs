@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import {css} from '@emotion/react'
-import rehype2react from 'rehype-react'
-import rehypeRaw from 'rehype-raw'
-import remark2rehype from 'remark-rehype'
-import unified from 'unified'
+import {unified} from 'unified'
 import parse from 'remark-parse'
+import rhypeReact from 'rehype-react'
+import rehypeRaw from 'rehype-raw'
+import remarkRehype from 'remark-rehype'
 import ImageZoom from '../../postComponents/image.zoom'
 import Anchor from '../../postComponents/anchor'
 import Blockquote from '../../postComponents/blockquote'
@@ -34,9 +34,9 @@ const components = {
 const MDX = ({content, children = null, nonPost = false, ...props}) => {
   const processor = unified()
     .use(parse)
-    .use(remark2rehype, {allowDangerousHtml: true})
+    .use(remarkRehype, {allowDangerousHtml: true})
     .use(rehypeRaw)
-    .use(rehype2react, {createElement: React.createElement, components})
+    .use(rhypeReact, {createElement: React.createElement, components})
 
   return (
     <MDXBody

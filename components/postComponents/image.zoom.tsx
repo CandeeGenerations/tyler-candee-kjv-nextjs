@@ -35,9 +35,9 @@ const ImageZoom = (props) => {
 
   return (
     <ImageWithZoom
-      image={image}
       zoomImage={image}
-      onZoom={() => handleImageZoomBackground('#fff')}
+      image={image}
+      onZoom={async () => handleImageZoomBackground('#fff')}
       defaultStyles={{
         zoomImage: {
           borderRadius: '5px',

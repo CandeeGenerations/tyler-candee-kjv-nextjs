@@ -13,7 +13,7 @@ const Tag = () => {
       </Header>
 
       {post.tags.map((post) => (
-        <Link href={`/tags/${post.slug}`} passHref>
+        <Link key={post.slug} href={`/tags/${post.slug}`} passHref>
           <TagLink className="rounded-full text-sm py-2 px-6 shadow hover:shadow-md mb-4 md:mb-0">
             #{post.slug}
           </TagLink>
