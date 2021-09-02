@@ -39,7 +39,7 @@ const Pagination = ({context, route = '', center = false}) => {
   }
 
   // If we're after the first page, we need page 1 to appear (2 and up)
-  if (pagesRange[0] > 1) {
+  if (pagesRange[0] > 1 && pages > maxPages) {
     truncatedRange.unshift(1)
   }
 
@@ -65,7 +65,7 @@ const Pagination = ({context, route = '', center = false}) => {
     truncatedRange.push(pages)
   }
 
-  const pagesSet = [...new Set(truncatedRange)]
+  const pagesSet = [...truncatedRange]
 
   return (
     <div className={`mt-24 lg:px-0 px-4 ${center ? 'text-center' : ''}`}>
