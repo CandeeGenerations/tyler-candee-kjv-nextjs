@@ -1,6 +1,6 @@
 {
   "name": "tyler-candee-kjv-nextjs",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 1338",
@@ -48,7 +48,6 @@
     "@types/react-medium-image-zoom": "^3.0.1",
     "standard-version": "^9.3.2",
     "typescript": "^4.4.4"
-
   },
   "peerDependencies": {
     "axios": "^0.24.0",
