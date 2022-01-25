@@ -1,16 +1,11 @@
 module.exports = {
-  purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./pages/**/*.tsx', './components/**/*.tsx'],
   theme: {
     extend: {},
     fontFamily: {
-      body:
-        '-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif',
+      body: '-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif',
       serif: "'Merriweather', Georgia, serif",
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }
