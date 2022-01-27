@@ -40,7 +40,9 @@ const ResourcesPage = () => {
                 </div>
 
                 <div className="sm:ml-16 sm:mt-0 mt-10 text-center flex-1 w-full sm:w-auto sm:flex-none flex-shrink-0">
-                  <ButtonLink href={resource.link}>Visit Site</ButtonLink>
+                  <ButtonLink anchor href={resource.link}>
+                    Visit Site
+                  </ButtonLink>
                 </div>
               </div>
             </li>
