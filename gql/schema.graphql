@@ -5,7 +5,7 @@ schema {
     mutation: Mutation
 }
 
-union Morph = Author | AuthorAggregator | AuthorConnection | AuthorConnectionAvatar | AuthorConnectionBio | AuthorConnectionCreatedAt | AuthorConnectionFeatured | AuthorConnectionId | AuthorConnectionName | AuthorConnectionPublished_at | AuthorConnectionSlug | AuthorConnectionSocial | AuthorConnectionUpdatedAt | AuthorConnection_id | AuthorGroupBy | Comment | CommentAggregator | CommentConnection | CommentConnectionApproved | CommentConnectionCreatedAt | CommentConnectionDate | CommentConnectionId | CommentConnectionName | CommentConnectionPost | CommentConnectionReference_comment | CommentConnectionText | CommentConnectionUpdatedAt | CommentConnection_id | CommentGroupBy | ComponentMetadataSocialNetworks | Post | PostAggregator | PostConnection | PostConnectionAuthor | PostConnectionBody | PostConnectionCreatedAt | PostConnectionDate | PostConnectionExcerpt | PostConnectionHero | PostConnectionId | PostConnectionPublished_at | PostConnectionSecret | PostConnectionSlug | PostConnectionTitle | PostConnectionUpdatedAt | PostConnection_id | PostGroupBy | Salvation | Sermon | SermonAggregator | SermonConnection | SermonConnectionCode | SermonConnectionCreatedAt | SermonConnectionDate | SermonConnectionHero | SermonConnectionId | SermonConnectionPublished_at | SermonConnectionTitle | SermonConnectionType | SermonConnectionUpdatedAt | SermonConnection_id | SermonGroupBy | SlugResponse | Tag | TagAggregator | TagAggregatorAvg | TagAggregatorMax | TagAggregatorMin | TagAggregatorSum | TagConnection | TagConnectionCreatedAt | TagConnectionFeatured | TagConnectionId | TagConnectionOrder | TagConnectionPublished_at | TagConnectionSlug | TagConnectionTag | TagConnectionUpdatedAt | TagConnection_id | TagGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreatedAt | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionSize | UploadFileConnectionUpdatedAt | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileConnection_id | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleConnection_id | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreatedAt | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdatedAt | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnection_id | UsersPermissionsUserGroupBy | createAuthorPayload | createCommentPayload | createPostPayload | createRolePayload | createSermonPayload | createTagPayload | createUserPayload | deleteAuthorPayload | deleteCommentPayload | deleteFilePayload | deletePostPayload | deleteRolePayload | deleteSalvationPayload | deleteSermonPayload | deleteTagPayload | deleteUserPayload | updateAuthorPayload | updateCommentPayload | updatePostPayload | updateRolePayload | updateSalvationPayload | updateSermonPayload | updateTagPayload | updateUserPayload
+union Morph = Author | AuthorAggregator | AuthorConnection | AuthorConnectionAvatar | AuthorConnectionBio | AuthorConnectionCreatedAt | AuthorConnectionFeatured | AuthorConnectionId | AuthorConnectionName | AuthorConnectionPublished_at | AuthorConnectionSlug | AuthorConnectionSocial | AuthorConnectionUpdatedAt | AuthorConnection_id | AuthorGroupBy | Comment | CommentAggregator | CommentConnection | CommentConnectionApproved | CommentConnectionCreatedAt | CommentConnectionDate | CommentConnectionId | CommentConnectionName | CommentConnectionPost | CommentConnectionReference_comment | CommentConnectionText | CommentConnectionUpdatedAt | CommentConnection_id | CommentGroupBy | ComponentMetadataSocialNetworks | Post | PostAggregator | PostConnection | PostConnectionAuthor | PostConnectionBody | PostConnectionCreatedAt | PostConnectionDate | PostConnectionExcerpt | PostConnectionHero | PostConnectionId | PostConnectionPublished_at | PostConnectionSecret | PostConnectionSlug | PostConnectionTitle | PostConnectionUpdatedAt | PostConnection_id | PostGroupBy | Resource | ResourceAggregator | ResourceConnection | ResourceConnectionCreatedAt | ResourceConnectionDescription | ResourceConnectionId | ResourceConnectionLink | ResourceConnectionPublished_at | ResourceConnectionTitle | ResourceConnectionUpdatedAt | ResourceConnection_id | ResourceGroupBy | Salvation | Sermon | SermonAggregator | SermonConnection | SermonConnectionCode | SermonConnectionCreatedAt | SermonConnectionDate | SermonConnectionHero | SermonConnectionId | SermonConnectionPublished_at | SermonConnectionTitle | SermonConnectionType | SermonConnectionUpdatedAt | SermonConnection_id | SermonGroupBy | SlugResponse | Tag | TagAggregator | TagAggregatorAvg | TagAggregatorMax | TagAggregatorMin | TagAggregatorSum | TagConnection | TagConnectionCreatedAt | TagConnectionFeatured | TagConnectionId | TagConnectionOrder | TagConnectionPublished_at | TagConnectionSlug | TagConnectionTag | TagConnectionUpdatedAt | TagConnection_id | TagGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreatedAt | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionSize | UploadFileConnectionUpdatedAt | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileConnection_id | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleConnection_id | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreatedAt | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdatedAt | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnection_id | UsersPermissionsUserGroupBy | createAuthorPayload | createCommentPayload | createPostPayload | createResourcePayload | createRolePayload | createSermonPayload | createTagPayload | createUserPayload | deleteAuthorPayload | deleteCommentPayload | deleteFilePayload | deletePostPayload | deleteResourcePayload | deleteRolePayload | deleteSalvationPayload | deleteSermonPayload | deleteTagPayload | deleteUserPayload | updateAuthorPayload | updateCommentPayload | updatePostPayload | updateResourcePayload | updateRolePayload | updateSalvationPayload | updateSermonPayload | updateTagPayload | updateUserPayload
 
 type AdminUser {
     firstname: String!
@@ -210,6 +210,7 @@ type Mutation {
     createAuthor(input: createAuthorInput): createAuthorPayload
     createComment(input: createCommentInput): createCommentPayload
     createPost(input: createPostInput): createPostPayload
+    createResource(input: createResourceInput): createResourcePayload
     "Create a new role"
     createRole(input: createRoleInput): createRolePayload
     createSermon(input: createSermonInput): createSermonPayload
@@ -221,6 +222,7 @@ type Mutation {
     "Delete one file"
     deleteFile(input: deleteFileInput): deleteFilePayload
     deletePost(input: deletePostInput): deletePostPayload
+    deleteResource(input: deleteResourceInput): deleteResourcePayload
     "Delete an existing role"
     deleteRole(input: deleteRoleInput): deleteRolePayload
     deleteSalvation: deleteSalvationPayload
@@ -238,6 +240,7 @@ type Mutation {
     updateComment(input: updateCommentInput): updateCommentPayload
     updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!
     updatePost(input: updatePostInput): updatePostPayload
+    updateResource(input: updateResourceInput): updateResourcePayload
     "Update an existing role"
     updateRole(input: updateRoleInput): updateRolePayload
     updateSalvation(input: updateSalvationInput): updateSalvationPayload
@@ -375,6 +378,10 @@ type Query {
     posts(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Post]
     postsConnection(limit: Int, sort: String, start: Int, where: JSON): PostConnection
     postsCount(where: JSON): Int!
+    resource(id: ID!, publicationState: PublicationState): Resource
+    resourceCount: Int!
+    resources(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Resource]
+    resourcesConnection(limit: Int, sort: String, start: Int, where: JSON): ResourceConnection
     role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
     "Retrieve all the existing roles. You can't apply filters on this query."
     roles(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [UsersPermissionsRole]
@@ -391,6 +398,79 @@ type Query {
     user(id: ID!, publicationState: PublicationState): UsersPermissionsUser
     users(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [UsersPermissionsUser]
     usersConnection(limit: Int, sort: String, start: Int, where: JSON): UsersPermissionsUserConnection
+}
+
+type Resource {
+    _id: ID!
+    createdAt: DateTime!
+    description: String
+    id: ID!
+    link: String!
+    published_at: DateTime
+    title: String!
+    updatedAt: DateTime!
+}
+
+type ResourceAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type ResourceConnection {
+    aggregate: ResourceAggregator
+    groupBy: ResourceGroupBy
+    values: [Resource]
+}
+
+type ResourceConnectionCreatedAt {
+    connection: ResourceConnection
+    key: DateTime
+}
+
+type ResourceConnectionDescription {
+    connection: ResourceConnection
+    key: String
+}
+
+type ResourceConnectionId {
+    connection: ResourceConnection
+    key: ID
+}
+
+type ResourceConnectionLink {
+    connection: ResourceConnection
+    key: String
+}
+
+type ResourceConnectionPublished_at {
+    connection: ResourceConnection
+    key: DateTime
+}
+
+type ResourceConnectionTitle {
+    connection: ResourceConnection
+    key: String
+}
+
+type ResourceConnectionUpdatedAt {
+    connection: ResourceConnection
+    key: DateTime
+}
+
+type ResourceConnection_id {
+    connection: ResourceConnection
+    key: ID
+}
+
+type ResourceGroupBy {
+    _id: [ResourceConnection_id]
+    createdAt: [ResourceConnectionCreatedAt]
+    description: [ResourceConnectionDescription]
+    id: [ResourceConnectionId]
+    link: [ResourceConnectionLink]
+    published_at: [ResourceConnectionPublished_at]
+    title: [ResourceConnectionTitle]
+    updatedAt: [ResourceConnectionUpdatedAt]
 }
 
 type Salvation {
@@ -962,6 +1042,10 @@ type createPostPayload {
     post: Post
 }
 
+type createResourcePayload {
+    resource: Resource
+}
+
 type createRolePayload {
     role: UsersPermissionsRole
 }
@@ -992,6 +1076,10 @@ type deleteFilePayload {
 
 type deletePostPayload {
     post: Post
+}
+
+type deleteResourcePayload {
+    resource: Resource
 }
 
 type deleteRolePayload {
@@ -1026,6 +1114,10 @@ type updatePostPayload {
     post: Post
 }
 
+type updateResourcePayload {
+    resource: Resource
+}
+
 type updateRolePayload {
     role: UsersPermissionsRole
 }
@@ -1055,6 +1147,24 @@ enum PublicationState {
     LIVE
     PREVIEW
 }
+
+"A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar Date
+
+"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar DateTime
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
+
+"The `Long` scalar type represents 52-bit integers"
+scalar Long
+
+"A time string with format: HH:mm:ss.SSS"
+scalar Time
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload
 
 input AuthorInput {
     avatar: ID
@@ -1130,6 +1240,15 @@ input PostInput {
     secret: Boolean
     slug: String!
     tags: [ID]
+    title: String!
+    updated_by: ID
+}
+
+input ResourceInput {
+    created_by: ID
+    description: String
+    link: String!
+    published_at: DateTime
     title: String!
     updated_by: ID
 }
@@ -1213,6 +1332,10 @@ input createPostInput {
     data: PostInput
 }
 
+input createResourceInput {
+    data: ResourceInput
+}
+
 input createRoleInput {
     data: RoleInput
 }
@@ -1242,6 +1365,10 @@ input deleteFileInput {
 }
 
 input deletePostInput {
+    where: InputID
+}
+
+input deleteResourceInput {
     where: InputID
 }
 
@@ -1330,6 +1457,15 @@ input editPostInput {
     updated_by: ID
 }
 
+input editResourceInput {
+    created_by: ID
+    description: String
+    link: String
+    published_at: DateTime
+    title: String
+    updated_by: ID
+}
+
 input editRoleInput {
     created_by: ID
     description: String
@@ -1400,6 +1536,11 @@ input updatePostInput {
     where: InputID
 }
 
+input updateResourceInput {
+    data: editResourceInput
+    where: InputID
+}
+
 input updateRoleInput {
     data: editRoleInput
     where: InputID
@@ -1423,22 +1564,3 @@ input updateUserInput {
     data: editUserInput
     where: InputID
 }
-
-
-"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
-scalar JSON
-
-"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
-scalar DateTime
-
-"A time string with format: HH:mm:ss.SSS"
-scalar Time
-
-"A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
-scalar Date
-
-"The `Long` scalar type represents 52-bit integers"
-scalar Long
-
-"The `Upload` scalar type represents a file upload."
-scalar Upload

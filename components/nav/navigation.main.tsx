@@ -27,6 +27,10 @@ const NavigationMain = ({footer = false}) => {
       </NavigationItem>
 
       <NavigationItem>
+        <Link href="/resources">Resources</Link>
+      </NavigationItem>
+
+      <NavigationItem>
         <Link href="/contact">Contact Me</Link>
       </NavigationItem>
     </NavigationList>
