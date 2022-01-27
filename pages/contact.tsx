@@ -7,6 +7,7 @@ import H1 from '../components/typography/heading1'
 import ButtonLink from '../components/buttonLink'
 import Checkmark from '../components/icons/checkmark'
 import {sendEmail} from '../api/email.api'
+import Headings from '../components/postComponents/headings'
 
 const Contact = () => {
   const [fields, setFields] = React.useState({name: '', email: '', message: ''})
@@ -44,7 +45,7 @@ const Contact = () => {
       <Helmet title={`Contact | ${siteTitle}`} />
 
       <div className="max-w-2xl my-32 lg:px-0 px-4">
-        <H1>Contact Tyler Candee</H1>
+        <Headings.h1>Contact Tyler Candee</Headings.h1>
       </div>
 
       <Wrapper className="rounded-lg p-10 relative shadow-xl">

@@ -3,18 +3,18 @@ import styled from '@emotion/styled'
 import {range} from '../../helpers'
 import PageButton from './pageButton'
 
-const Pagination = ({context, route = '', center = false}) => {
+const Pagination = ({context, max = 6, route = '', center = false}) => {
   const {count, page} = React.useContext(context)
   const parentRoute = route ? `/${route}` : ''
 
-  if (count <= 6) {
+  if (count <= max) {
     return null
   }
 
   // current === page
   // count === pages
   // maxPages === 3
-  const pages = Math.ceil(count / 6)
+  const pages = Math.ceil(count / max)
   const maxPages = 3
 
   // `page` is the page we're on
