@@ -5,14 +5,12 @@ body {
   background-color: #fafafa;
 }
 
-@layer base {
-  a {
-    color: rgb(85, 26, 139);
-  }
+a {
+  color: rgb(85, 26, 139);
+}
 
-  a:active {
-    color: rgb(255, 0, 0);
-  }
+a:active {
+  color: rgb(255, 0, 0);
 }
 
 .verse {
