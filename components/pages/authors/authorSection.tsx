@@ -35,7 +35,7 @@ const AuthorSection = () => {
 
 const AuthorWrapper = styled.div`
   z-index: 1;
-  margin: 35px auto 110px;
+  margin: 110px auto;
 `
 
 const AvatarWrapper = styled.div`
