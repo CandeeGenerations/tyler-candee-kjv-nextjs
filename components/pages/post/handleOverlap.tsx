@@ -12,7 +12,7 @@ import throttle from 'lodash/throttle'
  * and decides wether or not they're overlapping (with some buffer). If they are overlapping
  * we want to hide the top element.
  */
-const HandleOverlap: React.FC = (props) => {
+const HandleOverlap = (props) => {
   const asideRef = useRef<HTMLDivElement>(null)
   const [isOverlapping, setIsOverlapping] = useState(false)
 
