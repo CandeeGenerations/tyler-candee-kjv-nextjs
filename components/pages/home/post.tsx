@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 import readingTime from '../../../helpers/readingTime'
-import {getDate} from '../../../helpers'
+import {classNames, getDate} from '../../../helpers'
 import Image from '../../image'
 
 const Post = ({
@@ -10,6 +10,7 @@ const Post = ({
   data,
   narrow = true,
   full = false,
+  single = false,
 }) => {
   const postClasses = [
     'mb-2.5',
@@ -20,13 +21,15 @@ const Post = ({
 
   return (
     <PostWrapper
-      className={`col-span-2 md:col-span-1 ${
+      className={classNames(
+        single ? 'col-span-1' : 'col-span-2 md:col-span-1',
         full
           ? 'lg:col-span-2 lg:mb-0 md:mb-16 mb-0'
           : narrow
           ? 'lg:col-span-1'
-          : 'lg:col-span-2'
-      } ${className}`}
+          : 'lg:col-span-2',
+        className,
+      )}
     >
       <Link
         href={`/${route ? `${route}/` : ''}${data.slug || data.code}`}
@@ -34,17 +37,31 @@ const Post = ({
       >
         <PostLink>
           <PostContainer
-            className={`md:shadow-none md:hover:shadow-none shadow-2xl hover:shadow-lg rounded-b-lg md:rounded-none ${
-              full ? 'full' : ''
-            }`}
+            className={classNames(
+              single
+                ? 'bg-white'
+                : 'md:rounded-none md:shadow-none md:hover:shadow-none',
+              full ? 'full' : '',
+              'shadow-2xl hover:shadow-lg rounded-b-lg transition-all',
+            )}
           >
-            <PostImageWrapper className="shadow-none hover:shadow-none md:shadow-2xl md:hover:shadow-lg md:mb-7 mb-0 rounded-lg">
-              <PostImageContainer className="md:rounded-lg rounded-t-lg">
+            <PostImageWrapper
+              className={classNames(
+                single ? '' : 'md:shadow-2xl md:hover:shadow-lg md:mb-7',
+                'shadow-none hover:shadow-none mb-0 rounded-lg',
+              )}
+            >
+              <PostImageContainer
+                className={classNames(
+                  single ? '' : 'md:rounded-lg',
+                  'rounded-t-lg',
+                )}
+              >
                 <Image src={data.hero.url} alt={data.slug} />
               </PostImageContainer>
             </PostImageWrapper>
 
-            <div className="p-4 md:p-0">
+            <div className={classNames(single ? '' : 'md:p-0', 'p-4')}>
               <PostTitle
                 className={`${postClasses} text-xl font-bold font-serif`}
               >

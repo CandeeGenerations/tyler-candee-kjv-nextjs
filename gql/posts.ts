@@ -28,7 +28,7 @@ export const POSTS_COUNT_BY_TAG = gql`
 `
 
 export const postFragment = gql`
-  fragment PostFragement on Post {
+  fragment PostFragment on Post {
     id
     secret
     title
@@ -61,7 +61,7 @@ export const postFragment = gql`
 export const POST_BY_SLUG = gql`
   query PostBySlug($slug: String!) {
     posts(where: {secret: false, slug: $slug}) {
-      ...PostFragement
+      ...PostFragment
     }
   }
   ${postFragment}
@@ -70,7 +70,7 @@ export const POST_BY_SLUG = gql`
 export const NEXT_POSTS = gql`
   query PostBySlug($id: ID!) {
     nextPosts(id: $id) {
-      ...PostFragement
+      ...PostFragment
     }
   }
   ${postFragment}
@@ -79,7 +79,16 @@ export const NEXT_POSTS = gql`
 export const ALL_POSTS = gql`
   query allPosts($start: Int = 0) {
     posts(limit: 6, start: $start, sort: "date:desc", where: {secret: false}) {
-      ...PostFragement
+      ...PostFragment
+    }
+  }
+  ${postFragment}
+`
+
+export const TODAYS_POSTS = gql`
+  query todaysPosts {
+    todaysPosts {
+      ...PostFragment
     }
   }
   ${postFragment}
@@ -94,7 +103,7 @@ export const AUTHOR_POSTS = gql`
       publicationState: LIVE
       where: {secret: false, author: $authorId}
     ) {
-      ...PostFragement
+      ...PostFragment
     }
   }
   ${postFragment}
@@ -109,7 +118,7 @@ export const TAG_POSTS = gql`
       publicationState: LIVE
       where: {secret: false, tags_in: [$tagId]}
     ) {
-      ...PostFragement
+      ...PostFragment
     }
   }
   ${postFragment}

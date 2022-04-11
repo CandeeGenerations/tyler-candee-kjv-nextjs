@@ -5,6 +5,9 @@ const advancedFormat = require('dayjs/plugin/advancedFormat')
 
 dayjs.extend(advancedFormat)
 
+export const classNames = (...classes: string[]): string =>
+  classes.filter(Boolean).join(' ')
+
 export const getPaths = (source) => {
   const paths = []
 

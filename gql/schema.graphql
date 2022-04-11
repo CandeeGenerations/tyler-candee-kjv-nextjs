@@ -395,6 +395,7 @@ type Query {
     tagSlugs(sort: String): [SlugResponse]
     tags(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Tag]
     tagsConnection(limit: Int, sort: String, start: Int, where: JSON): TagConnection
+    todaysPosts: [Post]
     user(id: ID!, publicationState: PublicationState): UsersPermissionsUser
     users(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [UsersPermissionsUser]
     usersConnection(limit: Int, sort: String, start: Int, where: JSON): UsersPermissionsUserConnection

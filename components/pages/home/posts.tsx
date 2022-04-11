@@ -2,13 +2,24 @@ import React from 'react'
 import Post from './post'
 import {GridLayoutContext} from './gridLayout'
 import {PostsContext} from '../../../pages'
+import {classNames} from '../../../helpers'
 
-const HomePosts = ({posts = null}) => {
+const HomePosts = ({posts = null, single = false}) => {
   const postsContext = React.useContext(PostsContext)
   const {layout} = React.useContext(GridLayoutContext)
 
   if (posts === null) {
     posts = postsContext.posts
+  }
+
+  if (single) {
+    return (
+      <div className="grid grid-cols-1 gap-6 px-4 space-y-6">
+        {posts.map((post, index) => (
+          <Post key={index} data={post} single />
+        ))}
+      </div>
+    )
   }
 
   if (layout === 'rows') {

@@ -20,19 +20,23 @@ const FeaturedTags = () => {
 
       <FeaturedAuthor />
 
-      <Subscribe />
+      <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-4">
+        <div className="col-span-2">
+          <Subscribe />
+        </div>
 
-      {featuredTags.map((tag, index) => (
-        <TagPostsWrapper key={index}>
-          <div className="max-w-2xl my-32 lg:px-0 px-4">
-            <Headings.h2>{tag.tag}</Headings.h2>
-          </div>
+        <div className="col-span-1">
+          <Wrapper className="rounded-lg p-10 relative shadow-xl mt-12 lg:mt-0">
+            <Headings.h2>Today's Posts</Headings.h2>
 
-          <HomePosts posts={tag.posts} />
+            <p className="mt-2">Read today's posts right now!</p>
 
-          <ButtonLink href={`/tags/${tag.slug}`}>View More Posts</ButtonLink>
-        </TagPostsWrapper>
-      ))}
+            <div className="grid grid-col-1 gap-4 mt-10 text-center">
+              <ButtonLink href="/today">View Today's Posts</ButtonLink>
+            </div>
+          </Wrapper>
+        </div>
+      </div>
 
       <TagPostsWrapper>
         <div className="max-w-2xl my-32 lg:px-0 px-4">
@@ -41,11 +45,37 @@ const FeaturedTags = () => {
 
         <HomePosts posts={posts} />
 
-        <ButtonLink href="/posts">View More Posts</ButtonLink>
+        <div className="text-center md:text-left">
+          <ButtonLink href="/posts">View More Posts</ButtonLink>
+        </div>
       </TagPostsWrapper>
+
+      <div className="grid md:grid-cols-2 grid-cols-1">
+        {featuredTags.map((tag, index) => (
+          <TagPostsWrapper key={index}>
+            <div className="max-w-2xl my-32 lg:px-0 px-4">
+              <Headings.h2 className="px-4">{tag.tag}</Headings.h2>
+            </div>
+
+            <HomePosts single posts={tag.posts} />
+
+            <div className="px-4 mt-24 text-center md:text-left">
+              <ButtonLink href={`/tags/${tag.slug}`}>
+                View More Posts
+              </ButtonLink>
+            </div>
+          </TagPostsWrapper>
+        ))}
+      </div>
     </Layout>
   )
 }
+
+const Wrapper = styled.div`
+  max-width: 800px;
+  border: 1px solid #dddddd;
+  background: linear-gradient(180deg, #f1f1f1 0%, #fefefe 91.01%);
+`
 
 const TagPostsWrapper = styled.div`
   &:not(:last-of-type) {

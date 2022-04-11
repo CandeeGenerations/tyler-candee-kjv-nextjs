@@ -5,12 +5,9 @@ body {
   background-color: #fafafa;
 }
 
-a {
-  color: rgb(85, 26, 139);
-}
-
+a,
 a:active {
-  color: rgb(255, 0, 0);
+  color: rgb(85, 26, 139);
 }
 
 .verse {

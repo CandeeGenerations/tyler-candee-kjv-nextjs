@@ -3,6 +3,14 @@ import {getPassage, getVerse} from '../../api/verse.api'
 
 const Verse = () => {
   const [showVerse, setShowVerse] = useState(false)
+  const [verseData, setVerseData] = useState<
+    | {
+        e: {pageX?: number; pageY?: number} & Event
+        response: any
+        content: string
+      }
+    | undefined
+  >()
 
   const clickFunc = async (book, chapter, verse, endVerse) => {
     setShowVerse(false)
@@ -27,6 +35,14 @@ const Verse = () => {
     }
 
     if (response) {
+      setShowVerse(true)
+      setVerseData({response, content, e})
+    }
+  }
+
+  useEffect(() => {
+    if (showVerse && verseData) {
+      const {e, response, content} = verseData
       let left = e.pageX
 
       if (window.innerWidth < 500) {
@@ -35,23 +51,22 @@ const Verse = () => {
         left = window.innerWidth - 550
       }
 
-      setShowVerse(true)
-
       const verseElement = document.getElementById('verse')
 
       verseElement.style.top = `${e.pageY + 10}px`
       verseElement.style.left = `${left}px`
       verseElement.innerHTML = `<p id="verse-content"><span id="verse-reference">${response.reference}</span><br /><br />${content}</p>`
+    } else {
+      setVerseData(undefined)
     }
-  }
+  }, [showVerse])
 
   useEffect(() => {
     const verseElements = document.getElementsByClassName('verse')
 
     for (var i = 0; i < verseElements.length; i++) {
-      const verseElement: {onclick?: () => void} & Element = verseElements.item(
-        i,
-      )
+      const verseElement: {onclick?: () => void} & Element =
+        verseElements.item(i)
       const book = verseElement.getAttribute('data-book')
       const chapter = verseElement.getAttribute('data-chapter')
       const verse = verseElement.getAttribute('data-verse')
