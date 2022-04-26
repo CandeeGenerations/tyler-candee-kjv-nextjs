@@ -8,7 +8,7 @@ export const POSTS_COUNT = gql`
 
 export const POST_SLUGS = gql`
   query {
-    posts(where: {secret: false}) {
+    posts(publicationState: LIVE) {
       id
       slug
     }
@@ -60,7 +60,7 @@ export const postFragment = gql`
 
 export const POST_BY_SLUG = gql`
   query PostBySlug($slug: String!) {
-    posts(where: {secret: false, slug: $slug}) {
+    posts(where: {slug: $slug}) {
       ...PostFragment
     }
   }
