@@ -1,9 +1,19 @@
-import React from 'react'
+import React, {Context} from 'react'
 import styled from '@emotion/styled'
 import {range} from '../../helpers'
 import PageButton from './pageButton'
 
-const Pagination = ({context, max = 6, route = '', center = false}) => {
+const Pagination = ({
+  context,
+  max = 6,
+  route = '',
+  center = false,
+}: {
+  context: Context<{count: number; page: number}>
+  max?: number
+  route?: string
+  center?: boolean
+}) => {
   const {count, page} = React.useContext(context)
   const parentRoute = route ? `/${route}` : ''
 
