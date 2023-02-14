@@ -13,4 +13,7 @@ module.exports = {
       youtube: process.env.NEXT_PUBLIC_YOUTUBE,
     },
   },
+  experimental: {
+    newNextLinkBehavior: false,
+  },
 }
