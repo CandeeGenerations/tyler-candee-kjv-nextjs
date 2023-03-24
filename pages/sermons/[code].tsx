@@ -19,7 +19,7 @@ const Sermon = (props) => {
 
 export async function getStaticPaths() {
   const client = getGQLClient()
-  const sermonCodes = await client.request(SERMON_CODES, {
+  const sermonCodes: any = await client.request(SERMON_CODES, {
     where: {type: 'Sermon'},
   })
   let paths = []
@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({params}) => {
   const client = getGQLClient()
-  const sermonData = await client.request(SERMON_BY_CODE, {
+  const sermonData: any = await client.request(SERMON_BY_CODE, {
     code: params.code,
   })
   const sermon = sermonData.sermons[0]

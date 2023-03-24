@@ -18,7 +18,7 @@ const Page = (props) => {
 
 export async function getStaticPaths() {
   const client = getGQLClient()
-  const sermonsCountData = await client.request(SERMONS_COUNT, {
+  const sermonsCountData: any = await client.request(SERMONS_COUNT, {
     where: {type: 'Devotional'},
   })
   const pages = Math.ceil(sermonsCountData.sermonsCount / 6)
@@ -37,11 +37,11 @@ export async function getStaticPaths() {
 export const getStaticProps = async ({params}) => {
   const client = getGQLClient()
   const pageNumber = Number(params.page)
-  const sermonsData = await client.request(ALL_SERMONS, {
+  const sermonsData: any = await client.request(ALL_SERMONS, {
     where: {type: 'Devotional'},
     start: (pageNumber - 1) * 6,
   })
-  const sermonsCountData = await client.request(SERMONS_COUNT, {
+  const sermonsCountData: any = await client.request(SERMONS_COUNT, {
     where: {type: 'Devotional'},
   })
 

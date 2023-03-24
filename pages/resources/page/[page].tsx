@@ -18,7 +18,7 @@ const ResourcePage = (props) => {
 
 export async function getStaticPaths() {
   const client = getGQLClient()
-  const resourceCountData = await client.request(RESOURCE_COUNT)
+  const resourceCountData: any = await client.request(RESOURCE_COUNT)
   const pages = Math.ceil(resourceCountData.resourceCount / 10)
   const paths = []
 
@@ -35,10 +35,10 @@ export async function getStaticPaths() {
 export const getStaticProps = async ({params}) => {
   const client = getGQLClient()
   const pageNumber = Number(params.page)
-  const resourcesData = await client.request(ALL_RESOURCES, {
+  const resourcesData: any = await client.request(ALL_RESOURCES, {
     start: (pageNumber - 1) * 10,
   })
-  const resourceCountData = await client.request(RESOURCE_COUNT)
+  const resourceCountData: any = await client.request(RESOURCE_COUNT)
 
   return {
     props: {

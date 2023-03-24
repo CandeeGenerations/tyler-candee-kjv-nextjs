@@ -24,12 +24,15 @@ const Home = (props) => {
 
 export const getStaticProps = async () => {
   const client = getGQLClient()
-  const postsData = await client.request(ALL_POSTS, {limit: 4})
-  const authorData = await client.request(FEATURED_AUTHOR)
-  const featuredTagsData = await client.request(FEATURED_TAGS)
+  const postsData: any = await client.request(ALL_POSTS, {limit: 4})
+  const authorData: any = await client.request(FEATURED_AUTHOR)
+  const featuredTagsData: any = await client.request(FEATURED_TAGS)
 
   for (const tag of featuredTagsData.tags) {
-    const posts = await client.request(TAG_POSTS, {limit: 4, tagId: tag.id})
+    const posts: any = await client.request(TAG_POSTS, {
+      limit: 4,
+      tagId: tag.id,
+    })
 
     tag.posts = posts.posts
   }

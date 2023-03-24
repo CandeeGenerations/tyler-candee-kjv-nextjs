@@ -22,7 +22,7 @@ const Page = (props) => {
 
 export async function getStaticPaths() {
   const client = getGQLClient()
-  const postsCountData = await client.request(POSTS_COUNT)
+  const postsCountData: any = await client.request(POSTS_COUNT)
   const pages = Math.ceil(postsCountData.postsCount / 6)
   const paths = []
 
@@ -39,11 +39,11 @@ export async function getStaticPaths() {
 export const getStaticProps = async ({params}) => {
   const client = getGQLClient()
   const pageNumber = Number(params.page)
-  const postsData = await client.request(ALL_POSTS, {
+  const postsData: any = await client.request(ALL_POSTS, {
     start: (pageNumber - 1) * 6,
   })
-  const postsCountData = await client.request(POSTS_COUNT)
-  const authorData = await client.request(FEATURED_AUTHOR)
+  const postsCountData: any = await client.request(POSTS_COUNT)
+  const authorData: any = await client.request(FEATURED_AUTHOR)
 
   return {
     props: {

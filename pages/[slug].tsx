@@ -16,7 +16,7 @@ const Post = (props) => {
 
 export async function getStaticPaths() {
   const client = getGQLClient()
-  const postSlugs = await client.request(POST_SLUGS)
+  const postSlugs: any = await client.request(POST_SLUGS)
   let paths = []
 
   postSlugs.posts.forEach((post) => {
@@ -31,12 +31,14 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({params}) => {
   const client = getGQLClient()
-  const postData = await client.request(POST_BY_SLUG, {
+  const postData: any = await client.request(POST_BY_SLUG, {
     slug: params.slug,
   })
   const post = postData.posts[0]
-  const nextPostsData = await client.request(NEXT_POSTS, {id: post.id})
-  const comments = await client.request(COMMENTS_BY_POST, {postId: post.id})
+  const nextPostsData: any = await client.request(NEXT_POSTS, {id: post.id})
+  const comments: any = await client.request(COMMENTS_BY_POST, {
+    postId: post.id,
+  })
 
   return {
     props: {
