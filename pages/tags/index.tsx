@@ -23,14 +23,14 @@ const Tags = (props) => {
 
 export const getStaticProps = async () => {
   const client = getGQLClient()
-  const tagSlugs = await client.request(TAGS_SLUGS, {
+  const tagSlugs: any = await client.request(TAGS_SLUGS, {
     sort: 'featured:desc,order:asc,slug:asc',
   })
   const tags = tagSlugs.tagSlugs
 
   for (const index in tags) {
     const tag = tags[index]
-    const tagPosts = await client.request(TAG_POSTS, {tagId: tag.id})
+    const tagPosts: any = await client.request(TAG_POSTS, {tagId: tag.id})
 
     tags[index].posts = tagPosts.posts
   }

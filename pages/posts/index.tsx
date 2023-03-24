@@ -22,9 +22,9 @@ const Posts = (props) => {
 
 export const getStaticProps = async () => {
   const client = getGQLClient()
-  const postsData = await client.request(ALL_POSTS)
-  const postsCountData = await client.request(POSTS_COUNT)
-  const authorData = await client.request(FEATURED_AUTHOR)
+  const postsData: any = await client.request(ALL_POSTS)
+  const postsCountData: any = await client.request(POSTS_COUNT)
+  const authorData: any = await client.request(FEATURED_AUTHOR)
 
   return {
     props: {

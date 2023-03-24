@@ -18,8 +18,8 @@ const Resources = (props) => {
 
 export const getStaticProps = async () => {
   const client = getGQLClient()
-  const resourcesData = await client.request(ALL_RESOURCES)
-  const resourceCountData = await client.request(RESOURCE_COUNT)
+  const resourcesData: any = await client.request(ALL_RESOURCES)
+  const resourceCountData: any = await client.request(RESOURCE_COUNT)
 
   return {
     props: {

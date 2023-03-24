@@ -25,7 +25,7 @@ const Author = (props) => {
 
 export async function getStaticPaths() {
   const client = getGQLClient()
-  const authorSlugs = await client.request(AUTHORS_SLUGS)
+  const authorSlugs: any = await client.request(AUTHORS_SLUGS)
 
   return {
     paths: getPaths(authorSlugs.authorSlugs),
@@ -36,17 +36,20 @@ export async function getStaticPaths() {
 export const getStaticProps = async ({params}) => {
   const pageNumber = params.slug.length > 1 ? params.slug[2] : 1
   const client = getGQLClient()
-  const authorData = await client.request(GET_AUTHOR_BY_SLUG, {
+  const authorData: any = await client.request(GET_AUTHOR_BY_SLUG, {
     slug: params.slug[0],
   })
   const author = authorData.authors[0]
-  const authorPostsData = await client.request(AUTHOR_POSTS, {
+  const authorPostsData: any = await client.request(AUTHOR_POSTS, {
     start: (pageNumber - 1) * 6,
     authorId: author.id,
   })
-  const postsCountByAuthorData = await client.request(POSTS_COUNT_BY_AUTHOR, {
-    authorId: author.id,
-  })
+  const postsCountByAuthorData: any = await client.request(
+    POSTS_COUNT_BY_AUTHOR,
+    {
+      authorId: author.id,
+    },
+  )
 
   return {
     props: {

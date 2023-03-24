@@ -25,7 +25,7 @@ const Tag = (props) => {
 
 export async function getStaticPaths() {
   const client = getGQLClient()
-  const tagSlugs = await client.request(TAGS_SLUGS)
+  const tagSlugs: any = await client.request(TAGS_SLUGS)
 
   return {
     paths: getPaths(tagSlugs.tagSlugs),
@@ -36,15 +36,15 @@ export async function getStaticPaths() {
 export const getStaticProps = async ({params}) => {
   const pageNumber = params.slug.length > 1 ? params.slug[2] : 1
   const client = getGQLClient()
-  const tagData = await client.request(GET_TAG_BY_SLUG, {
+  const tagData: any = await client.request(GET_TAG_BY_SLUG, {
     slug: params.slug[0],
   })
   const tag = tagData.tags[0]
-  const tagPostsData = await client.request(TAG_POSTS, {
+  const tagPostsData: any = await client.request(TAG_POSTS, {
     start: (pageNumber - 1) * 6,
     tagId: tag.id,
   })
-  const postsCountByTagData = await client.request(POSTS_COUNT_BY_TAG, {
+  const postsCountByTagData: any = await client.request(POSTS_COUNT_BY_TAG, {
     tagId: tag.id,
   })
 

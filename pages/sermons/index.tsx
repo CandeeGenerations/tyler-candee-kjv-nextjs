@@ -19,10 +19,10 @@ const Preaching = (props) => {
 
 export const getStaticProps = async () => {
   const client = getGQLClient()
-  const sermonsData = await client.request(ALL_SERMONS, {
+  const sermonsData: any = await client.request(ALL_SERMONS, {
     where: {type: 'Sermon'},
   })
-  const sermonsCountData = await client.request(SERMONS_COUNT, {
+  const sermonsCountData: any = await client.request(SERMONS_COUNT, {
     where: {type: 'Sermon'},
   })
 

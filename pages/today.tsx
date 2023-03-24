@@ -17,7 +17,7 @@ const Today = () => {
 
   const getTodaysPosts = async () => {
     const client = getGQLClient()
-    const postsData = await client.request(TODAYS_POSTS)
+    const postsData: any = await client.request(TODAYS_POSTS)
 
     setPosts(postsData.todaysPosts)
     setLoading(false)
