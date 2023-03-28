@@ -2,7 +2,6 @@ import React from 'react'
 import Post from './post'
 import {GridLayoutContext} from './gridLayout'
 import {PostsContext} from '../../../pages'
-import {classNames} from '../../../helpers'
 
 const HomePosts = ({posts = null, single = false}) => {
   const postsContext = React.useContext(PostsContext)
