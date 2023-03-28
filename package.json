@@ -1,12 +1,12 @@
 {
   "name": "tyler-candee-kjv-nextjs",
-  "version": "1.4.7",
+  "version": "1.5.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 1338",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
+    "dev": "doppler run --command='NEXT_PUBLIC_APP_VERSION=$npm_package_version next dev -p ${PORT-3000}'",
+    "build": "NEXT_PUBLIC_APP_VERSION=$npm_package_version next build",
+    "start": "NEXT_PUBLIC_APP_VERSION=$npm_package_version next start",
+    "export": "NEXT_PUBLIC_APP_VERSION=$npm_package_version next export",
     "release": "standard-version -a -- --release-as minor",
     "prepare": "husky install"
   },

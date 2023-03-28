@@ -12,7 +12,7 @@ export const sendNewCommentSlackMessage = ({id, post, name, text}) => {
   axios.post(
     slackUrl,
     {
-      username: 'Tyler Candee KJV',
+      username: 'T. S. Candee',
       text: 'There is a new comment on your website:',
       attachments: [
         {

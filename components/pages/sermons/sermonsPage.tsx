@@ -13,7 +13,7 @@ const SermonsPage = ({devotionals = false}) => {
   return (
     <Layout>
       <div className="max-w-2xl my-32 lg:px-0 px-4">
-        <H1>Watch some {keyword} from Tyler Candee today!</H1>
+        <H1>Watch some {keyword} from T. S. Candee today!</H1>
       </div>
 
       <div className="flex flex-row gap-4 justify-center mb-12">

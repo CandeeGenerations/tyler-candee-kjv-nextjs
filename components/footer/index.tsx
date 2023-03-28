@@ -13,7 +13,7 @@ const Footer = () => {
 
       <FooterWrapper className="relative flex items-center content-between lg:pb-20 pb-32 lg:flex-row flex-col">
         <div className="flex-grow pb-16 lg:pb-0 text-center lg:text-left">
-          &copy; 2020 - {year} Tyler Candee (
+          &copy; 2020 - {year} T. S. Candee (
           <a href="https://ko-fi.com/tylercandeekjv" target="_blank">
             Buy me a Coffee
           </a>
