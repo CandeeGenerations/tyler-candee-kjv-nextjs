@@ -1,7 +1,7 @@
 import {gql} from 'graphql-request'
 
 export const TAGS_SLUGS = gql`
-  query($sort: String) {
+  query ($sort: String) {
     tagSlugs(sort: $sort) {
       id
       tag
@@ -14,7 +14,7 @@ export const TAGS_SLUGS = gql`
 `
 
 export const GET_TAG_BY_SLUG = gql`
-  query($slug: String!) {
+  query ($slug: String!) {
     tags(limit: 1, where: {slug: $slug}) {
       id
       slug
