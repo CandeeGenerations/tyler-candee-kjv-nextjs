@@ -38,14 +38,14 @@ const SEO = ({
       rel: 'canonical',
       href: fullURL(pathname),
     },
-    {itemprop: 'name', content: title || 'Tyler Candee'},
+    {itemprop: 'name', content: title || 'T. S. Candee'},
     {itemprop: 'description', content: description},
     {itemprop: 'image', content: fullURL(image)},
     {name: 'description', content: description},
 
     {name: 'twitter:card', content: 'summary_large_image'},
-    {name: 'twitter:site', content: 'Tyler Candee'},
-    {name: 'twitter:title', content: title || 'Tyler Candee'},
+    {name: 'twitter:site', content: 'T. S. Candee'},
+    {name: 'twitter:title', content: title || 'T. S. Candee'},
     {name: 'twitter:description', content: description},
     {name: 'twitter:creator', content: twitter},
     {
@@ -53,11 +53,11 @@ const SEO = ({
       content: fullURL(image),
     },
 
-    {property: 'og:title', content: title || 'Tyler Candee'},
+    {property: 'og:title', content: title || 'T. S. Candee'},
     {property: 'og:url', content: url},
     {property: 'og:image', content: fullURL(image)},
     {property: 'og:description', content: description},
-    {property: 'og:site_name', content: 'Tyler Candee'},
+    {property: 'og:site_name', content: 'T. S. Candee'},
   ]
 
   if (published) {

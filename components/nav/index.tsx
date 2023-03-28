@@ -8,6 +8,7 @@ import {useRouter} from 'next/router'
 import ExIcon from '../icons/ex'
 import SharePageButton from './sharePageButton'
 import NavigationMain from './navigation.main'
+import Image from 'next/image'
 
 const Nav = () => {
   const router = useRouter()
@@ -34,7 +35,12 @@ const Nav = () => {
               </BackArrowIconContainer>
             )}
 
-            <Logo fill="#000" />
+            <Image
+              src="/logo.png"
+              alt="T. S. Candee"
+              width={150}
+              height={650}
+            />
           </a>
         </LogoLink>
 

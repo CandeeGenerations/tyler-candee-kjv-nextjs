@@ -15,7 +15,7 @@ const FeaturedTags = () => {
   return (
     <Layout>
       <div className="max-w-2xl my-32 lg:px-0 px-4">
-        <H1>Read some helpful posts from Tyler Candee today!</H1>
+        <H1>Read some helpful posts from T. S. Candee today!</H1>
       </div>
 
       <FeaturedAuthor />

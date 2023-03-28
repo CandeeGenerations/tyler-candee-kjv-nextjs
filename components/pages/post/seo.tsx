@@ -29,7 +29,7 @@ const PostSEO = ({post, location}) => {
     "description": "${post.excerpt.replace(/"/g, '\\"')}",
     "publisher": {
       "@type": "Organization",
-      "name": "Tyler Candee",
+      "name": "T. S. Candee",
       "logo": {
         "@type": "ImageObject",
         "url": "${siteUrl}/icons/icon-512x512.png"

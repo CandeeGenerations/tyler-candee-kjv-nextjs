@@ -1,1 +1,1 @@
-export const siteTitle = 'Tyler Candee - Helpful Posts'
+export const siteTitle = 'T. S. Candee - Helpful Posts'

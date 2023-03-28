@@ -45,7 +45,7 @@ const Contact = () => {
       <Helmet title={`Contact | ${siteTitle}`} />
 
       <div className="max-w-2xl my-32 lg:px-0 px-4">
-        <Headings.h1>Contact Tyler Candee</Headings.h1>
+        <Headings.h1>Contact T. S. Candee</Headings.h1>
       </div>
 
       <Wrapper className="rounded-lg p-10 relative shadow-xl">
