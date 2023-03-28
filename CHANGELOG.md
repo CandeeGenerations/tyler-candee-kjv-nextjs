@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/compare/v1.4.7...v1.5.0) (2023-03-28)
+
+
+### Features
+
+* transitioned to tscandee ([33e0d7e](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/commit/33e0d7e9deb36680ac2c60ddf568b59e936d9ef4))
+
 ### [1.4.7](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/compare/v1.4.6...v1.4.7) (2023-03-24)
 
 
