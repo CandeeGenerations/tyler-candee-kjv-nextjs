@@ -33,11 +33,7 @@ const Nav = () => {
               </BackArrowIconContainer>
             )}
 
-            <img
-              src="/logo.png"
-              alt="T. S. Candee"
-              style={{width: 650, height: 150}}
-            />
+            <img src="/logo.png" alt="T. S. Candee" style={{maxWidth: 175}} />
           </a>
         </LogoLink>
 
