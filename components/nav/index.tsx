@@ -36,7 +36,7 @@ const Nav = () => {
             <img
               src="/logo.png"
               alt="T. S. Candee"
-              style={{width: 150, height: 650}}
+              style={{width: 650, height: 150}}
             />
           </a>
         </LogoLink>
