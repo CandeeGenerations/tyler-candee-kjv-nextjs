@@ -2,7 +2,7 @@ import {gql} from 'graphql-request'
 
 export const COMMENTS_BY_POST = gql`
   query FindCommentsByPost($postId: ID!) {
-    commentsByPost(postId: $postId, where: {approved: true}) {
+    commentsByPost(postId: $postId, sort: "date:asc", where: {approved: true}) {
       id
       name
       text
