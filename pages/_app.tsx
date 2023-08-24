@@ -1,25 +1,11 @@
-import {Helmet} from 'react-helmet'
-import 'tailwindcss/tailwind.css'
-import '../styles/globals.css'
 import {useRouter} from 'next/router'
 import React from 'react'
+import {Helmet} from 'react-helmet'
+import 'tailwindcss/tailwind.css'
 import * as gtag from '../libs/gtag'
+import '../styles/globals.css'
 
 function MyApp({Component, pageProps}) {
-  const sep = ' -------------------------------------'
-
-  console.log(`
-   _____    _____                
-  / ____|  / ____|               
- | |      | |  __  ___ _ __  
- | |      | | |_ |/ _ \\ '_ \\ 
- | |____  | |__| |  __/ | | |
-  \\_____|  \\_____|\\___|_| |_|
-  
-${sep}
- T. S. Candee | v${process.env.NEXT_PUBLIC_APP_VERSION || '_dev'}
-${sep}`)
-
   const router = useRouter()
 
   React.useEffect(() => {
