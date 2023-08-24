@@ -1,6 +1,6 @@
 {
   "name": "tyler-candee-kjv-nextjs",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "private": true,
   "scripts": {
     "dev": "doppler run --command='NEXT_PUBLIC_APP_VERSION=$npm_package_version next dev -p ${PORT-3000}'",
