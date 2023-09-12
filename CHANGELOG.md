@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.5](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/compare/v1.5.4...v1.5.5) (2023-09-12)
+
+
+### Bug Fixes
+
+* package updates ([6f8c999](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/commit/6f8c9998ba28b7e0c42f07bcc3e49fc126d841fc))
+
 ### [1.5.4](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/compare/v1.5.3...v1.5.4) (2023-08-24)
 
 
