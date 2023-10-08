@@ -1,6 +1,6 @@
 {
   "name": "tyler-candee-kjv-nextjs",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "private": true,
   "scripts": {
     "dev": "doppler run --command='NEXT_PUBLIC_APP_VERSION=$npm_package_version next dev -p ${PORT-3000}'",
@@ -20,14 +20,14 @@
     "apollo-boost": "^0.4.9",
     "apollo-server-micro": "^3.12.1",
     "autoprefixer": "^10.4.16",
-    "axios": "^1.5.0",
+    "axios": "^1.5.1",
     "dayjs": "^1.11.10",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "isomorphic-unfetch": "^4.0.2",
-    "next": "^13.5.2",
+    "next": "^13.5.4",
     "nookies": "^2.5.2",
-    "postcss": "^8.4.30",
+    "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -43,12 +43,12 @@
     "unified": "10.1.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
-    "@types/gtag.js": "^0.0.14",
-    "@types/node": "^20.6.5",
-    "@types/react": "^18.2.22",
-    "@types/react-helmet": "^6.1.6",
+    "@types/gtag.js": "^0.0.16",
+    "@types/node": "^20.8.3",
+    "@types/react": "^18.2.25",
+    "@types/react-helmet": "^6.1.7",
     "@types/react-medium-image-zoom": "^3.0.1",
     "cssnano": "^6.0.1",
     "husky": "^8.0.0",
@@ -58,6 +58,7 @@
   },
   "resolutions": {
     "semver": "^7.5.2",
-    "@types/react": "^18.0.0"
+    "@types/react": "^18.0.0",
+    "postcss": "^8.4.31"
   }
 }
