@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/compare/v1.5.7...v1.6.0) (2023-10-10)
+
+
+### Features
+
+* added the second death video to the salvation page ([7099841](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/commit/70998419926da75d02104ec9245ac9c702d7c0b5))
+
 ### [1.5.7](https://github.com/CandeeGenerations/tyler-candee-kjv-nextjs/compare/v1.5.6...v1.5.7) (2023-10-08)
 
 
