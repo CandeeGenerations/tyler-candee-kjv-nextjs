@@ -1,12 +1,12 @@
-import React from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
+import React from 'react'
 import {getWindowDimensions} from '../../helpers'
 import ChevronLeft from '../icons/chevron.left'
-import {useRouter} from 'next/router'
 import ExIcon from '../icons/ex'
-import SharePageButton from './sharePageButton'
 import NavigationMain from './navigation.main'
+import SharePageButton from './sharePageButton'
 
 const Nav = () => {
   const router = useRouter()
@@ -26,15 +26,13 @@ const Nav = () => {
     <div className="max-w-screen-xl mx-auto px-4 md:px-0">
       <NavContainer>
         <LogoLink href="/" back={showBackArrow ? 'true' : 'false'} passHref>
-          <a>
-            {showBackArrow && (
-              <BackArrowIconContainer>
-                <ChevronLeft fill="#000" />
-              </BackArrowIconContainer>
-            )}
+          {showBackArrow && (
+            <BackArrowIconContainer>
+              <ChevronLeft fill="#000" />
+            </BackArrowIconContainer>
+          )}
 
-            <img src="/logo.png" alt="T. S. Candee" style={{maxWidth: 175}} />
-          </a>
+          <img src="/logo.png" alt="T. S. Candee" style={{maxWidth: 175}} />
         </LogoLink>
 
         <NavigationMain />

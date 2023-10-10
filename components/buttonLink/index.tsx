@@ -30,22 +30,29 @@ const ButtonLink = ({
     linkProps = {...linkProps, ...anchorProps}
   }
 
-  const link = noBackground ? (
-    <a {...linkProps}>{children}</a>
-  ) : (
-    <Button {...linkProps}>{children}</Button>
-  )
-
   return anchor ? (
-    link
-  ) : (
-    <Link href={href} passHref>
-      {link}
+    noBackground ? (
+      <a {...linkProps}>{children}</a>
+    ) : (
+      <Button {...linkProps}>{children}</Button>
+    )
+  ) : noBackground ? (
+    <Link href={href} {...linkProps}>
+      {children}
     </Link>
+  ) : (
+    <ButtonAnchor href={href} {...linkProps}>
+      {children}
+    </ButtonAnchor>
   )
 }
 
 const Button = styled.a`
+  background-color: #121212;
+  color: #fff;
+`
+
+const ButtonAnchor = styled(Link)`
   background-color: #121212;
   color: #fff;
 `

@@ -1,8 +1,10 @@
-import Layout from '../../layout'
+import styled from '@emotion/styled'
 import React from 'react'
+import LiteYouTubeEmbed from 'react-lite-youtube-embed'
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 import {getDate} from '../../../helpers'
 import {SermonContext} from '../../../pages/sermons/[code]'
-import styled from '@emotion/styled'
+import Layout from '../../layout'
 import H1 from '../../typography/heading1'
 
 const SermonPage = () => {
@@ -18,12 +20,7 @@ const SermonPage = () => {
         </SubHeader>
       </header>
 
-      <SermonFrame
-        src={`https://www.youtube.com/embed/${sermon.code}`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
+      <LiteYouTubeEmbed id={sermon.code} title={sermon.title} />
     </Layout>
   )
 }
@@ -35,17 +32,6 @@ const Header = styled(H1)`
 
 const SubHeader = styled.div`
   color: #73737d;
-`
-
-const SermonFrame = styled.iframe`
-  width: 100%;
-  border: 0;
-  height: 450px;
-  margin-top: 20px;
-
-  @media (min-width: 1024px) {
-    height: 700px;
-  }
 `
 
 export default SermonPage
