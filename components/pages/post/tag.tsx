@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import {PostContext} from '../../../pages/[slug]'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+import React from 'react'
+import {PostContext} from '../../../pages/[slug]'
 
 const Tag = () => {
   const {post} = React.useContext(PostContext)
@@ -13,11 +13,13 @@ const Tag = () => {
       </Header>
 
       {post.tags.map((post) => (
-        <Link key={post.slug} href={`/tags/${post.slug}`} passHref>
-          <TagLink className="rounded-full text-sm py-2 px-6 shadow hover:shadow-md mb-4 md:mb-0">
-            #{post.slug}
-          </TagLink>
-        </Link>
+        <TagLink
+          key={post.slug}
+          href={`/tags/${post.slug}`}
+          className="rounded-full text-sm py-2 px-6 shadow hover:shadow-md mb-4 md:mb-0"
+        >
+          #{post.slug}
+        </TagLink>
       ))}
     </section>
   )
@@ -27,10 +29,12 @@ const Header = styled.h3`
   color: #000;
 `
 
-const TagLink = styled.a`
+const TagLink = styled(Link)`
   background-color: #ededed;
   color: #000;
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition:
+    transform 0.3s ease-out,
+    box-shadow 0.3s ease-out;
 
   &:not(:last-of-type) {
     margin-right: 15px;

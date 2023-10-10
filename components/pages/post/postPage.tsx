@@ -1,17 +1,17 @@
-import React from 'react'
-import Link from 'next/link'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+import React from 'react'
+import {getDate} from '../../../helpers'
+import readingTime from '../../../helpers/readingTime'
 import {PostContext} from '../../../pages/[slug]'
 import Layout from '../../layout'
 import H1 from '../../typography/heading1'
-import {getDate} from '../../../helpers'
-import readingTime from '../../../helpers/readingTime'
-import NextPosts from './nextPosts'
-import MDXRenderer from './mdx'
-import PostSEO from './seo'
-import Comments from './comments'
-import Tag from './tag'
 import Subscribe from '../home/subscribe'
+import Comments from './comments'
+import MDXRenderer from './mdx'
+import NextPosts from './nextPosts'
+import PostSEO from './seo'
+import Tag from './tag'
 
 const PostPage = () => {
   const {post, nextPosts} = React.useContext(PostContext)
@@ -24,24 +24,25 @@ const PostPage = () => {
         <Header className="font-serif keep-all">{post.title}</Header>
 
         <SubHeader className="relative flex text-lg lg:flex-row flex-col">
-          <Link href={`/authors/${post.author.slug}`} passHref>
-            <AuthorLink className="flex items-center">
-              <AuthorImageWrapper className="rounded-full mr-3 overflow-hidden hidden lg:block">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={post.author.avatar.url}
-                    alt={post.author.name}
-                    height={25}
-                    width={25}
-                  />
-                </div>
-              </AuthorImageWrapper>
+          <AuthorLink
+            href={`/authors/${post.author.slug}`}
+            className="flex items-center"
+          >
+            <AuthorImageWrapper className="rounded-full mr-3 overflow-hidden hidden lg:block">
+              <div className="relative overflow-hidden">
+                <img
+                  src={post.author.avatar.url}
+                  alt={post.author.name}
+                  height={25}
+                  width={25}
+                />
+              </div>
+            </AuthorImageWrapper>
 
-              <strong className="text-sm lg:text-lg">{post.author.name}</strong>
+            <strong className="text-sm lg:text-lg">{post.author.name}</strong>
 
-              <span className="hidden lg:block">,&nbsp;</span>
-            </AuthorLink>
-          </Link>
+            <span className="hidden lg:block">,&nbsp;</span>
+          </AuthorLink>
 
           <div className="ml-0 text-sm lg:text-lg">
             {getDate(post.date)} · {readingTime(post.body)}
@@ -92,7 +93,7 @@ const SubHeader = styled.div`
   color: #73737d;
 `
 
-const AuthorLink = styled.a`
+const AuthorLink = styled(Link)`
   color: inherit;
 `
 

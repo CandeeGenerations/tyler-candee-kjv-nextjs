@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import styled from '@emotion/styled'
-import readingTime from '../../../helpers/readingTime'
+import Link from 'next/link'
 import {classNames, getDate} from '../../../helpers'
+import readingTime from '../../../helpers/readingTime'
 import Image from '../../image'
 
 const Post = ({
@@ -31,59 +31,52 @@ const Post = ({
         className,
       )}
     >
-      <Link
-        href={`/${route ? `${route}/` : ''}${data.slug || data.code}`}
-        passHref
-      >
-        <PostLink>
-          <PostContainer
+      <PostLink href={`/${route ? `${route}/` : ''}${data.slug || data.code}`}>
+        <PostContainer
+          className={classNames(
+            single
+              ? 'bg-white'
+              : 'md:rounded-none md:shadow-none md:hover:shadow-none',
+            full ? 'full' : '',
+            'shadow-2xl hover:shadow-lg rounded-b-lg transition-all',
+          )}
+        >
+          <PostImageWrapper
             className={classNames(
-              single
-                ? 'bg-white'
-                : 'md:rounded-none md:shadow-none md:hover:shadow-none',
-              full ? 'full' : '',
-              'shadow-2xl hover:shadow-lg rounded-b-lg transition-all',
+              single ? '' : 'md:shadow-2xl md:hover:shadow-lg md:mb-7',
+              'shadow-none hover:shadow-none mb-0 rounded-lg',
             )}
           >
-            <PostImageWrapper
+            <PostImageContainer
               className={classNames(
-                single ? '' : 'md:shadow-2xl md:hover:shadow-lg md:mb-7',
-                'shadow-none hover:shadow-none mb-0 rounded-lg',
+                single ? '' : 'md:rounded-lg',
+                'rounded-t-lg',
               )}
             >
-              <PostImageContainer
-                className={classNames(
-                  single ? '' : 'md:rounded-lg',
-                  'rounded-t-lg',
-                )}
-              >
-                <Image src={data.hero.url} alt={data.slug} />
-              </PostImageContainer>
-            </PostImageWrapper>
+              <Image src={data.hero.url} alt={data.slug} />
+            </PostImageContainer>
+          </PostImageWrapper>
 
-            <div className={classNames(single ? '' : 'md:p-0', 'p-4')}>
-              <PostTitle
-                className={`${postClasses} text-xl font-bold font-serif`}
-              >
-                {data.title}
-              </PostTitle>
+          <div className={classNames(single ? '' : 'md:p-0', 'p-4')}>
+            <PostTitle
+              className={`${postClasses} text-xl font-bold font-serif`}
+            >
+              {data.title}
+            </PostTitle>
 
-              {data.excerpt && (
-                <PostExcerpt
-                  className={`${postClasses} text-base break-normal`}
-                >
-                  {data.excerpt}
-                </PostExcerpt>
-              )}
+            {data.excerpt && (
+              <PostExcerpt className={`${postClasses} text-base break-normal`}>
+                {data.excerpt}
+              </PostExcerpt>
+            )}
 
-              <PostMetadata className="text-base font-semibold opacity-30">
-                {getDate(data.date)}
-                {data.body && `· ${readingTime(data.body)}`}
-              </PostMetadata>
-            </div>
-          </PostContainer>
-        </PostLink>
-      </Link>
+            <PostMetadata className="text-base font-semibold opacity-30">
+              {getDate(data.date)}
+              {data.body && `· ${readingTime(data.body)}`}
+            </PostMetadata>
+          </div>
+        </PostContainer>
+      </PostLink>
     </PostWrapper>
   )
 }
@@ -99,7 +92,7 @@ const PostWrapper = styled.div`
   transition: transform 0.33s ease-out;
 `
 
-const PostLink = styled.a`
+const PostLink = styled(Link)`
   position: relative;
   display: block;
   width: 100%;
@@ -138,7 +131,9 @@ const PostContainer = styled.div`
 const PostImageWrapper = styled.div`
   position: relative;
   height: 280px;
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition:
+    transform 0.3s ease-out,
+    box-shadow 0.3s ease-out;
 `
 
 const PostImageContainer = styled.div`

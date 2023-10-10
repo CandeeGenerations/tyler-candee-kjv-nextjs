@@ -1,11 +1,11 @@
-import React from 'react'
-import Link from 'next/link'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+import React from 'react'
 import {PostsContext} from '../../../pages'
-import TilesIcon from '../../icons/tiles'
 import RowsIcon from '../../icons/rows'
-import {GridLayoutContext} from './gridLayout'
+import TilesIcon from '../../icons/tiles'
 import Image from '../../image'
+import {GridLayoutContext} from './gridLayout'
 
 const FeaturedAuthor = () => {
   const {author} = React.useContext(PostsContext)
@@ -15,21 +15,22 @@ const FeaturedAuthor = () => {
     <div className="md:grid grid-cols-3 my-32 hidden">
       <div className="col-span-2">
         <div className="flex items-center relative -left-2.5">
-          <Link href={`/authors/${author.slug}`} passHref>
-            <AuthorLink className="block relative h-10 w-10 rounded-full">
-              <AuthorImageWrapper className="h-10 w-10 mr-4 overflow-hidden rounded-full">
-                <div className="overflow-hidden relative rounded-full">
-                  <AuthorImagePush />
+          <AuthorLink
+            href={`/authors/${author.slug}`}
+            className="block relative h-10 w-10 rounded-full"
+          >
+            <AuthorImageWrapper className="h-10 w-10 mr-4 overflow-hidden rounded-full">
+              <div className="overflow-hidden relative rounded-full">
+                <AuthorImagePush />
 
-                  <Image
-                    className="absolute top-0 left-0 w-full h-full"
-                    src={author.avatar.url}
-                    alt={author.name}
-                  />
-                </div>
-              </AuthorImageWrapper>
-            </AuthorLink>
-          </Link>
+                <Image
+                  className="absolute top-0 left-0 w-full h-full"
+                  src={author.avatar.url}
+                  alt={author.name}
+                />
+              </div>
+            </AuthorImageWrapper>
+          </AuthorLink>
 
           <AuthorBio className="text-sm max-w-md">{author.bio}</AuthorBio>
         </div>
@@ -58,7 +59,7 @@ const FeaturedAuthor = () => {
   )
 }
 
-const AuthorLink = styled.a`
+const AuthorLink = styled(Link)`
   background: rgba(0, 0, 0, 0.25);
   margin: 10px 26px 10px 10px;
 

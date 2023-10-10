@@ -1,10 +1,13 @@
 import styled from '@emotion/styled'
-import Layout from '../../components/layout'
-import Headings from '../../components/postComponents/headings'
-import Blockquote from '../../components/postComponents/blockquote'
-import ButtonLink from '../../components/buttonLink'
 import {Helmet} from 'react-helmet'
+import ButtonLink from '../../components/buttonLink'
+import Layout from '../../components/layout'
+import Blockquote from '../../components/postComponents/blockquote'
+import Headings from '../../components/postComponents/headings'
 import {siteTitle} from '../../helpers/contants'
+
+import LiteYouTubeEmbed from 'react-lite-youtube-embed'
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 const Salvation = () => {
   return (
@@ -14,10 +17,15 @@ const Salvation = () => {
       <SalvationContainer className="lg:px-0 px-4">
         <Headings.h1>Salvation</Headings.h1>
 
-        <Headings.h3 style={{marginTop: 50}}>
+        <Headings.h3 style={{marginTop: 50, marginBottom: 50}}>
           Are you <strong>100%</strong> sure that if you died right now that you
           would go to heaven?
         </Headings.h3>
+
+        <LiteYouTubeEmbed
+          id="-zAezS_ypok"
+          title="The Second Death (The Romans Road)"
+        />
 
         <p style={{marginTop: 50}}>
           The Bible says you can <strong>know</strong> that you have eternal
